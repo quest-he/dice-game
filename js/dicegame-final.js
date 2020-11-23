@@ -4,8 +4,12 @@
 //   ⚀⚁⚂⚃⚄⚅      click to roll dice
 //  🎲🎲  🎲🎲    2 players 2 dice each   
 //
-// STARTING HERE REASSIGN EVERYTHING
-// FOR THIS PARTICULAR ASSIGNMENT LOL 
+
+// call the footer
+const footNote = document.getElementById('footNote');
+// footer output
+footNote.innerHTML = '\u00A9' + '2020 Bruce Wong, David Deda, Heather Tijman'; 
+
 //
 // (all following code is cloned from assignment 7)
 //
