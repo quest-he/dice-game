@@ -21,6 +21,9 @@ html {
     width:100%;
     background-color: $bg;
 }
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 body {
 	background-color: $bg;
     color: $main;
@@ -47,7 +50,7 @@ footer {
 // page wrap div
 #rap {
     margin:1em;
-  }
+}
 
 header {
     width:99.7%;
