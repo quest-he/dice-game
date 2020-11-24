@@ -5,6 +5,11 @@
 //  🎲🎲  🎲🎲    2 players 2 dice each   
 //
 
+// HTML output for each player
+const player1 = document.getElementById('player1-output');
+const player2 = document.getElementById('player2-output');
+
+
 // call the footer
 const footNote = document.getElementById('footNote');
 // footer output

@@ -13,102 +13,73 @@
 </head>
 <body>
 <!-- start rap -->
-    <div class="rap">
-        <header>
-            <h1>JavaScript: Dice Game</h1>
-        </header>
-<!-- content -->
-        <main class='container'> 
-            <h2>Click to roll a die.</h2>               
-    <!-- start game -->
-    <div class="d1">
-        <h1>(dice here)</h1>
-            <p>1 Itaque earum rerum hic tenetur
-      a sapiente delectus, 
-     ut aut reiciendis voluptatibus 
-     maiores alias consequatur
-      aut perferendis doloribus 
-      asperiores repellat."</p>
-    </div>
-    <div class="d2">
-        <h2>player</h2>
-            <p>2 Itaque earum rerum hic tenetur
-      a sapiente delectus, 
-     ut aut reiciendis voluptatibus 
-     maiores alias consequatur
-      aut perferendis doloribus 
-      asperiores repellat."
-  
-      Itaque earum rerum hic tenetur
-      a sapiente delectus, 
-     ut aut reiciendis voluptatibus 
-     maiores alias consequatur
-      aut perferendis doloribus 
-      asperiores repellat."
-      Itaque earum rerum hic tenetur
-      a sapiente delectus, 
-     ut aut reiciendis voluptatibus 
-     maiores alias consequatur
-      aut perferendis doloribus 
-      asperiores repellat."
-      Itaque earum rerum hic tenetur
-      a sapiente delectus, 
-     ut aut reiciendis voluptatibus 
-     maiores alias consequatur
-      aut perferendis doloribus 
-      asperiores repellat."</p>
-    </div>
-    <div class="d3">
-        <h2>opponent</h2>
-            <p>3 Itaque earum rerum hic tenetur
-        a sapiente delectus, 
-       ut aut reiciendis voluptatibus 
-       maiores alias consequatur
-        aut perferendis doloribus 
-        asperiores repellat."
-        Itaque earum rerum hic tenetur
-        a sapiente delectus, 
-       ut aut reiciendis voluptatibus 
-       maiores alias consequatur
-        aut perferendis doloribus 
-        asperiores repellat."
-        Itaque earum rerum hic tenetur
-        a sapiente delectus, 
-       ut aut reiciendis voluptatibus 
-       maiores alias consequatur
-        aut perferendis doloribus 
-        asperiores repellat."
-        Itaque earum rerum hic tenetur
-        a sapiente delectus, 
-       ut aut reiciendis voluptatibus 
-       maiores alias consequatur
-        aut perferendis doloribus 
-        asperiores repellat."</p>
-    </div>
-    <div class="d4">
-        <div class="container2">
-            <div class="d6">
+<div class="rap">
+    <header>
+        <h1>JavaScript: Dice Game</h1>
+    </header>
+    
+    <main class='container'>
+        <div class="container">
+            <div class="d1">
+<!-- instructions: how to play this dice game -->        
                 <h3>how to play</h3>
-                    <p>aut perferendis doloribus 
-                    asperiores repellat."</p>
-            </div>
-            <div class="d7"> 
-                <h3>how to play</h3>
-                    <p>aut perferendis doloribus 
-                    asperiores repellat."</p>
+                <p>aut perferendis doloribus 
+                    asperiores repellat."</p>  
+                
+
+            
             </div>
         </div>
-    </div>
+<!-- start game -->
+        <div class='container2'>
+            <div class="d2">
+<!-- dice 1 of player 1 -->
+                    <h2>dice 1</h2>
+                    <button type="button" class="butn"
+                        onClick="rollTheDice()"> 
+                        Roll the Dice 
+                    <img class="img2" src="imgs/dice6.png"> 
+                </button> 
+                </div>
+                <div class="d3">
+<!-- dice 2 of player 2 -->
+                    <h2>dice 2</h2>
+                    <button type="button" class="butn"
+                        onClick="rollTheDice()"> 
+                        Roll the Dice 
+                    <img class="img1" src="imgs/dice3.png">
+                </div>
+                <div class="d4">
+<!-- player 1 output -->
+                    <h2>player 1</h2>
+                    <p id='player1-roll'>${Player 1} rolled a...</p>
+                </div>    
+                
+                <div class="d5">
 
-    <!-- output -->
-            <div id="output"></div>
-        </main>    
+                    <h2>player 2</h2>
+                    <p id='player2-roll'>${Player 2} rolled a...</p>
+            
+                </div>
+            </div>               
+            
+
+            <div class='d1'>
+                <h2>results</h2>
+                <p id='results'>Roll to win!</p>
+            </div>                            
+                    
+
+            
+
+   
+    </main>    
 <!-- site author info -->
-        <footer>
-            <p id='footNote'></p>
-        </footer>
+    <footer>
+        <p id='footNote'></p>
+    </footer>
 <!-- final rap -->
-    </div>
+</div>
 
 <!-- external JavaScript -->
 <script src="./js/dicegame-final.js"></script>
