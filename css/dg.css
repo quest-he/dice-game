@@ -108,7 +108,7 @@ main p {
 .butn {
   background: #4ecca3;
   font-family: "Indie Flower", cursive;
-  border-radius: 7px;
+  border-radius: 50%;
   color: #ffff;
   font-size: 30px;
   padding: 16px 25px 16px 25px;
@@ -144,7 +144,7 @@ main p {
        items with names instead of numbers*/
   display: grid;
   align-items: center;
-  margin-top: 0%;
+  margin: auto 0;
 }
 
 .d1 {
@@ -154,11 +154,13 @@ main p {
 .d2 {
   background: lightseagreen;
   grid-area: dice;
+  align-items: center;
 }
 
 .d3 {
   background: skyblue;
   grid-area: dice2;
+  align-items: center;
 }
 
 .d4 {

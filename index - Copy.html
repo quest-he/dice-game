@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- BCIT:COMP2132 -- Final Project -- Nov. 19. 2020 
+        Bruce Wong
+        David Deda
+        Heather Tijman             
+    
+    
+    /////////////////////
+    
+    NOOOOOTTTES  NOTES NOTES NOTES NOTES NOTES NOTES
+
+    - every img MUST have an alt
+    - there must be NO internal styles in the HTML
+    - validate code before submission
+    - comment out all code
+    
+    /////////////////////
+
+    -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript: Dice Game</title>
+    <link rel="stylesheet" href="./css/dg.css">
+</head>
+<body>
+<!-- start rap -->
+<div class="rap">
+    <header>
+        <h1>JavaScript: Dice Game</h1>
+    </header>
+    
+    <main class='container'>
+        <div class="container">
+            <div class="d1">
+<!-- instructions: how to play  dice game -->        
+                <h3>how to play</h3>
+                <p id='howtoplay'>aut perferendis doloribus 
+                    asperiores repellat."</p>  
+            </div>
+            <div class="d1">
+<!-- rules: of dice game -->        
+                <h3>rules</h3>
+                <p id='rules'>use js to output lists</p>
+            </div>
+        </div>
+<!-- start game -->
+        <div class='container2'>
+            <div class="d2">
+<!-- dice 1 of player 1 -->
+                <h2>Roll the Dice</h2>                    
+                <button type="button" class="butn"
+                        onClick="rollTheDice()"> 
+                    <img class="img2" src="imgs/dice6.png"> 
+                </button> 
+            </div>
+            <div class="d3">
+<!-- dice 2 of cmputer -->
+                <h2>Roll the Dice</h2>                    
+                <button type="button" class="butn"
+                        onClick="rollTheDice()"> 
+                    <img class="img1" src="imgs/dice3.png">
+                </div>
+                <div class="d4">
+<!-- player 1 output -->
+                    <h2>player 1</h2>
+                    <p id='player1-roll'>${Player 1} rolled a...</p>
+                </div>    
+                
+                <div class="d5">
+
+                    <h2>player 2</h2>
+                    <p id='player2-roll'>${Computer} rolled a...</p>
+            
+                </div>
+            </div>               
+            
+
+            <div class='d1'>
+                <h2>results</h2>
+                <p id='results'>Roll to win!</p>
+            </div>                            
+                    
+
+            
+
+   
+    </main>    
+<!-- site author info -->
+    <footer>
+        <p id='footNote'></p>
+    </footer>
+<!-- final rap -->
+</div>
+
+<!-- external JavaScript -->
+<script src="./js/dicegame-final.js"></script>
+
+</body>
+</html>
