@@ -87,6 +87,10 @@ main {
   flex-wrap: wrap;
 }
 
+main h3:first-child {
+  padding-top: 1.5em;
+}
+
 main p {
   font-family: 'Georgia', 'Times New Roman', serif, monospace;
   padding: .5em 2em;
@@ -95,6 +99,10 @@ main p {
   color: #161677;
   font-size: 18px;
   text-align: center;
+}
+
+#rules {
+  padding-bottom: 1.5em;
 }
 
 .butn {
@@ -116,7 +124,7 @@ main p {
 .container {
   font-size: 20px;
   width: 100%;
-  background: LightGray;
+  background: #8fa8fc;
   align-items: center;
   margin-top: 5%;
 }

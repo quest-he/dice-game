@@ -89,6 +89,9 @@ main {
     text-align:left;
     flex-direction:column;
     flex-wrap:wrap;
+    h3:first-child{
+        padding-top:1.5em;
+    }
     p {
         font-family: 'Georgia', 'Times New Roman', serif, monospace;
         padding:.5em 2em;
@@ -99,7 +102,9 @@ main {
         text-align:center;
     }
 }
-
+#rules{
+    padding-bottom:1.5em;
+}
 
 
 
@@ -120,7 +125,7 @@ main {
 .container {
     font-size: 20px;
     width: 100%;
-    background: LightGray;
+    background: $container;
     align-items:center;
     margin-top:5%;
 }
@@ -148,6 +153,7 @@ main {
 }
 .d1{
     background:$container;
+    
 }
 .d2{
     background:lightseagreen;
