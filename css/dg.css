@@ -7,7 +7,7 @@
 html {
   box-sizing: border-box;
   width: 100%;
-  background-color: darkslateblue;
+  background-color: midnightblue;
 }
 
 *, *:before, *:after {
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background-color: darkslateblue;
+  background-color: midnightblue;
   color: black;
   display: flex;
   line-height: 1.2em;
@@ -53,7 +53,7 @@ header {
 }
 
 header h1 {
-  color: #fff5ee;
+  color: ivory;
   font-family: 'Lucida sans', monospace;
   font-size: 32pt;
   font-weight: lighter;
@@ -69,7 +69,7 @@ h2 {
   font-size: 24pt;
   font-family: 'Lucida sans', monospace;
   font-weight: lighter;
-  margin: 4px;
+  margin: 0;
   padding: .5em;
   line-height: 1.2em;
   text-align: center;
@@ -94,7 +94,6 @@ main h3:first-child {
 }
 
 main p {
-  font-family: 'Georgia', 'Times New Roman', serif, monospace;
   padding: .5em 2em;
   margin: 0;
   line-height: 1.2em;
@@ -130,7 +129,7 @@ section.hideshow p {
 .container {
   font-size: 20px;
   width: 100%;
-  background: #8fa8fc;
+  background: lightgreen;
   align-items: center;
   margin-top: 5%;
 }
@@ -140,8 +139,6 @@ section.hideshow p {
   width: 100%;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
-  grid-column-gap: 20px;
-  grid-row-gap: 10px;
   /* arranging the grid template areas 
        is like stacking legos*/
   grid-template-areas: "dice dice2 " "play play2 ";
@@ -154,28 +151,32 @@ section.hideshow p {
 }
 
 .d1 {
-  background: #8fa8fc;
+  background: lightgreen;
+  padding-bottom: 1em;
 }
 
 .d2 {
   background: lightseagreen;
   grid-area: dice;
   align-items: center;
+  padding: 1em;
 }
 
 .d3 {
-  background: skyblue;
+  background: lightskyblue;
   grid-area: dice2;
   align-items: center;
+  padding: 1em;
 }
 
 .d4 {
-  background: darkcyan;
+  background: lightseagreen;
   grid-area: play;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1em;
 }
 
 .d5 {
@@ -185,6 +186,11 @@ section.hideshow p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1em;
+}
+
+.d6 {
+  background: yellow;
 }
 
 .dice {
@@ -240,13 +246,21 @@ section.hideshow p {
 .div4 {
   margin: 5px;
   height: 25px;
+}
+
+#div4Display {
   border: 1px solid black;
+  padding: 2px;
 }
 
 .div5 {
   margin: 5px;
   height: 25px;
+}
+
+#div5Display {
   border: 1px solid black;
+  padding: 2px;
 }
 
 .div6 {
@@ -284,13 +298,21 @@ section.hideshow p {
 .div24 {
   margin: 5px;
   height: 25px;
+}
+
+#div24Display {
   border: 1px solid black;
+  padding: 2px;
 }
 
 .div25 {
   margin: 5px;
   height: 25px;
+}
+
+#div25Display {
   border: 1px solid black;
+  padding: 2px;
 }
 
 .div26 {
@@ -299,18 +321,15 @@ section.hideshow p {
   border: 1px solid black;
 }
 
-.external-links {
-  color: #aaf0f0;
+/*.external-links {
+    color: $link;
 }
-
 .external-links:hover {
-  color: violet;
+    color: $hover;
 }
-
 .internal-links {
-  color: #aaf0f0;
+    color: $link;
 }
-
 .internal-links:hover {
-  color: #b49cf7;
-}
+    color: #b49cf7;
+}*/

@@ -9,13 +9,12 @@
     Heather Tijman
 */
 
-$bg: midnightblue;
+$bg: darkslateblue;
 $main: black;
-$container: lightgreen;
-
-//$link: #aaf0f0;
-//$hover: violet;
-//$visited:darkturquoise;
+$container: #8fa8fc;
+$link: #aaf0f0;
+$hover: violet;
+$visited:darkturquoise;
 
 html {
     box-sizing:border-box;
@@ -59,7 +58,7 @@ footer {
 header {
     width:99.7%;
     h1 {
-        color:ivory;
+        color:#fff5ee;
         font-family: 'Lucida sans', monospace;
         font-size: 32pt;
         font-weight:lighter;
@@ -74,7 +73,7 @@ h2 {
     font-size:24pt;
     font-family: 'Lucida sans', monospace;
     font-weight:lighter;
-	margin:0;
+	margin:4px;
     padding: .5em;
     line-height: 1.2em;
     text-align:center;
@@ -94,6 +93,7 @@ main {
         padding-top:1.5em;
     }
     p {
+        font-family: 'Georgia', 'Times New Roman', serif, monospace;
         padding:.5em 2em;
         margin:0;
         line-height:1.2em;
@@ -136,6 +136,8 @@ section.hideshow p{
     width: 100%;
     grid-template-columns: auto auto ;
     grid-template-rows: auto;
+    grid-column-gap: 20px;
+    grid-row-gap:10px;
     /* arranging the grid template areas 
        is like stacking legos*/
     grid-template-areas:
@@ -149,31 +151,31 @@ section.hideshow p{
     display:grid;
     align-items:center;
     margin: auto 0;
+
 }
 .d1{
-    background:$container; 
-    padding-bottom:1em;
+    background:$container;
+    
 }
 .d2{
     background:lightseagreen;
     grid-area:dice;
     align-items:center;
-    padding:1em;
+
 }
 .d3{
-    background:lightskyblue;
+    background:skyblue;
     grid-area:dice2;
     align-items:center;
-    padding:1em;
+
 }
 .d4{
-    background:lightseagreen;
+    background:darkcyan;
     grid-area:play;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    padding:1em;
 }
 .d5{
     background:lightskyblue;
@@ -182,10 +184,6 @@ section.hideshow p{
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    padding:1em;
-}
-.d6{
-    background:yellow;
 }
 .dice{
     text-align: center; 
@@ -218,6 +216,7 @@ section.hideshow p{
     justify-content: center;
     border-collapse: collapse;
 }
+
 .div1{ //Player1 heading
     
     margin: 5px;
@@ -225,6 +224,7 @@ section.hideshow p{
     border: 1px dashed black;
     border-collapse: collapse;
 }
+
 .div2{  //Player1 Dice#1 title
     margin: 5px;
     //width: 50px;
@@ -233,34 +233,33 @@ section.hideshow p{
     border: 1px solid black;
     border-collapse: collapse;
 }
+
 .div3{ //Player1 Dice#2 title
     margin: 5px;
     height:100px;
     border: 1px solid black;
 }
+
 .div4{ //Player1 Score this round title
     margin: 5px;
     //width: 50px;
     height: 25px;
-}
-#div4Display{
     border: 1px solid black;
-    padding:2px;
 }
+
 .div5{ //Player1 Total Score title
     margin: 5px;
     //width: 100px;
     height: 25px;
-}
-#div5Display{
     border: 1px solid black;
-    padding:2px;
 }
+
 .div6{
     margin: 5px;
     //width: 100px;
     border: 1px solid black;
 }
+
 .parent2 {
     //margin: 10px;
     padding: 10px;
@@ -269,11 +268,13 @@ section.hideshow p{
     justify-content: center;
     border-collapse: collapse;
 }
+
 .div21{ // COMPUTER heading
     margin: 5px;
     border: 1px dashed black;
     border-collapse: collapse;
 }
+
 .div22{ //computer Dice#1
     margin: 5px;
     //width: 50px;
@@ -282,29 +283,27 @@ section.hideshow p{
     border: 1px solid black;
     border-collapse: collapse;
 }
+
 .div23{ //computer Dice#2
     margin: 5px;
     height:100px;
     border: 1px solid black;
 }
+
 .div24{ //computer Score this round title
     margin: 5px;
     //width: 50px;
     height: 25px;
-}
-#div24Display{
     border: 1px solid black;
-    padding:2px;
 }
+
 .div25{ //computer Total Score title
     margin: 5px;
     //width: 100px;
     height: 25px;
-}
-#div25Display{
     border: 1px solid black;
-    padding:2px;
 }
+
 .div26{
     margin: 5px;
     //width: 100px;
@@ -312,8 +311,9 @@ section.hideshow p{
     border: 1px solid black;
 }
 
+
 //////////////////// links
-/*.external-links {
+.external-links {
     color: $link;
 }
 .external-links:hover {
@@ -324,7 +324,7 @@ section.hideshow p{
 }
 .internal-links:hover {
     color: #b49cf7;
-}*/
+}
 ///////////////////
 
 

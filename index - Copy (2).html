@@ -49,7 +49,7 @@
             <!-- dropdown reveal -->
                 <button class='btn_show' id="btn_show">Show Rules</button>
                 <section class='hideshow'>
-                    <p>1. Please click the 'Roll All Dice' button three times!</p>
+                    <p>1. Please click the 'Roll Dice' button three times!</p>
                     <p>2. If anyone rolls a 1, their score for 
                         that round is 0!</p>
                     <p>3. If anyone rolls a pair, add the faces 
@@ -64,9 +64,9 @@
                     
             <div class="d2">
 <!-- player 1 die -->
-                <h2>Click to Roll Dice</h2>    
+                <h2>Roll the Dice</h2>    
             <!-- dice 1 -->                
-                <button type="button" class="butn"
+                <button type="button" class="start"
                         onClick="rollTheDice()"> 
                     <img class="div2 img1 die"
                          src="./imgs/dice6.png"
@@ -74,7 +74,7 @@
                 </button> 
                 
             <!-- dice 2 -->
-                <button type="button" class="butn"
+                <button type="button" class="start"
                         onClick="rollTheDice()"> 
                     <img class="div3 img2 die" 
                          src="./imgs/dice5.png"
@@ -85,9 +85,9 @@
             </div>
             <div class="d3">
 <!-- computer die -->
-                <h2>&nbsp;</h2>  
+                <h2>Roll the Dice</h2>  
             <!-- dice 1 -->                  
-                <button type="button" class="butn"
+                <button type="button" class="start"
                         onClick="rollTheDice()"> 
                     <img class="div22 img3 die" 
                          src="./imgs/dice4.png"
@@ -95,7 +95,7 @@
                 </button>
                 
             <!-- dice 2-->
-                <button type="button" class="butn"
+                <button type="button" class="start"
                         onClick="rollTheDice()"> 
                     <img class="div23 img4 die" 
                          src="./imgs/dice3.png"
@@ -105,10 +105,10 @@
 
             <div class="parent d4">
 <!-- player 1 output -->
-                <h2>Player 1</h2>
-                <p id='player1-roll'>&nbsp;</p>
-            <!--<div id="div2Display">dice 1</div>
-                <div id="div3Display">dice 2</div> -->    
+                <h2>player 1</h2>
+                <p id='player1-roll'>${Player 1} rolled a...</p>
+                <div id="div2Display">dice 1</div>
+                <div id="div3Display">dice 2</div>
                 <div class="div4">Score this round</div>
                 <div id="div4Display">Score Output</div>
                 <div class="div5">Total Score</div>
@@ -116,10 +116,10 @@
             </div>    
 <!-- computer output -->
             <div class="parent2 d5">
-                <h2>Computer</h2>
-                <p id='player2-roll'>&nbsp;</p>
-            <!--<div id="div22Display">dice 1</div>
-                <div id="div23Display">dice 2</div> -->    
+                <h2>player 2</h2>
+                <p id='player2-roll'>${Computer} rolled a...</p>
+                <div id="div22Display">dice 1</div>
+                <div id="div23Display">dice 2</div>
                 <div class="div24">Score this round</div>
                 <div id="div24Display">Score Output</div>
                 <div class="div25">Total Score</div>
@@ -129,10 +129,9 @@
         </div>               
            
 <!-- results output -->
-        <div class='d6'>
+        <div class='d1'>
             <h2>results</h2>
             <p id='output'>Roll to win! &nbsp;</p>
-            
 <!-- reset button -->
             <button id="newGamebtn" value="Refreshed page" 
                     onclick="location.reload(true);">New Game</button>

@@ -21,7 +21,7 @@ const hideshow  = document.getElementById("hideshow");
 //instructions for How to Play Dice Game
 var instructions = [`Click on a dice to start and stop its roll or click the 'Roll All Dice' button below.`,
     `After three turns, the game is over.`,
-    `Play as many rounds as you wish!`];
+    `Play as many rounds as you like!`];
 var ul = document.createElement('ul'); //create ul element
 //set attributes
 ul.setAttribute('style', 'padding: .5em; margin: 0;');
@@ -73,85 +73,6 @@ let compTotal = 0;
 //keep track of Die face number from 1-6
 let numberOfDie = 0;
 
-///////////////////////////////////////
-// CYCLE DICE ANIMATION
-//
-//HTML Elements
-const faceOfDie = document.getElementsByClassName("die");
-
-// BOOLEAN track if the user has started the animation
-let userHasNotStartedAnimationYet = true;
-
-let diceAnimationHandler; //we need an animation handler
-
-//boolean flag to track if user has chosen to start or stop
-let keepSpinning = false;
-
-let currentImageNumber = 1; //the first image # in the group
-const maxImageNumber = 6; //the last image # in the group 
-
-//dice is clicked
-$('.start').click(function(){
-    
-    console.log("Start dice animation cycle.");
-    //
-    userHasNotStartedAnimationYet = false;
-    keepSpinning = true;
-    //start spin animation
-    diceAnimationHandler = requestAnimationFrame(spin);
-
-});
-
-//run spin() through each frame of the animation
-function spin(){
-    //count up by 1
-    currentImageNumber++;
-    //if end of images, start again
-    if( currentImageNumber > maxImageNumber ){
-        currentImageNumber = 1;
-    }
-    //update img
-    faceOfDie.src = `./imgs/dice${currentImageNumber}.png`;
-
-    //determine if we should keep spinning
-    //or if the user has clicked the stop button,
-    //stop the spin animation
-    if(keepSpinning === true){
-        setTimeout(function(){
-            requestAnimationFrame( spin );
-        }, 100);
-    }//else{  keepSpinning = false; }
-}
-
-//////////////////////////////////////////////////////////////////// not yet happening
-// REPLACE dice image to match the value rolled 
-//
-/* update the dice image PD1 with correct number */
-function updateDiceImagesPD1(player1dice1score){
-
-    let pathToImage = `./imgs/dice${player1dice1score}.png`;
-    $("#div2").attr("src", pathToImage);
-}
-
-/* update the dice image PD2 with correct number */
-function  updateDiceImagesPD2(player1dice2score){
-    let pathToImage = `./imgs/dice${player1dice2score}.png`;
-    $("#div3").attr("src", pathToImage);
-}
-
-/* update the dice image CD1 with correct number */
-function  updateDiceImagesCD1(compDice1score){
-    let pathToImage = `./imgs/dice${compDice1score}.png`;
-    $("#div22").attr("src", pathToImage);
-}
-
-/* update the dice image CD2 with correct number */
-function  updateDiceImagesCD2(compDice2score){
-    let pathToImage = `./imgs/dice${compDice2score}.png`;
-    $("#div23").attr("src", pathToImage);
-}
-////////////////////////////////////////////////////////////////////
-
 // Part 1
 // Die Object
 class Die{
@@ -191,7 +112,7 @@ DiceRoll.prototype.roll = function(){
 }
 
 // Part 2b
-// DiceRoll Object //////////////////////////////////// not seeing this in the log yet
+// DiceRoll Object
 // describeSelf function
 DiceRoll.prototype.describeSelf = function(){
 
@@ -207,7 +128,7 @@ class Player {
     constructor( name ){
         this.name = name;
     }
-}//////////////////////////////////////////////////// not yet using Player object?
+}//////////////////////////////////////////////////// not yet using Player object
 
 
 //Test instantiate Die object and display value
@@ -227,27 +148,22 @@ rollDicebtn.addEventListener('click', function(event){
         $('#div2Display').text(z);
         player1dice1score = parseInt(z);
         updateDiceImagesPD1(player1dice1score);//call updateDiceImages Function
-        player1.innerHTML += `Player rolled a ${player1dice1score}`;
     };
     myDiceRollDice2.roll();{
         $('#div3Display').text(z);
         player1dice2score = parseInt(z);
         updateDiceImagesPD2(player1dice2score);//call updateDiceImages Function
-        player1.innerHTML += ` and a ${player1dice2score}.<br />`;
     };
     //Computer
     compDiceRoll.roll();{
         $('#div22Display').text(z);
         compDice1score = z;
         updateDiceImagesCD1(compDice1score);//call updateDiceImages Function
-        computer.innerHTML += `Computer rolled a ${compDice1score}`;
-
     };
     compDiceRoll2.roll();{
         $('#div23Display').text(z);
         compDice2score = z;
         updateDiceImagesCD2(compDice2score);//call updateDiceImages Function
-        computer.innerHTML += ` and a ${compDice2score}.<br />`;
     };
 
     // calculate Player score output
@@ -284,6 +200,7 @@ rollDicebtn.addEventListener('click', function(event){
         (compScoreOutput = parseInt(compDice1score) + parseInt(compDice2score));
         $('#div24Display').text(compScoreOutput);
     }
+     
     
     //count values for total score
     //player 1 score
@@ -299,10 +216,10 @@ rollDicebtn.addEventListener('click', function(event){
     counter = counter + 1;
 
     if( (playerTotal > compTotal) && (counter === 4) ){
-        alert(`GAME OVER. Player 1 wins! The game will now reset.`);
+        alert('GAME OVER. Player 1 wins! The game will now reset.');
     } 
     else if ( (compTotal >= playerTotal ) && (counter === 4) ){
-        alert(`GAME OVER. Computer wins! The game will now reset.`);
+        alert('GAME OVER. Computer wins! The game will now reset.');
     }   
 
 //game over = reset to zero for all values
@@ -339,7 +256,7 @@ const $btnShow = $('.btn_show');
 $btnShow.click(function(){
 
     const $btn = $(this); //shows this element Class = button
-    const $rulesText = $(this).next(); //nxt element image and text
+    const $rulesText = $(this).next(); //Next element image and text
 
     if($rulesText.is(':visible')){
         $btn.text('Show Rules');
@@ -390,7 +307,91 @@ function rollTheDice() {
         } 
     }, 2500); 
 } 
+/*
+-------------------------------------
+cycle dice animation
+-------------------------------------
+*/
 
+//HTML Elements
+const faceOfDie = document.getElementsByClassName("die");
+
+// BOOLEAN track if the user has started the animation
+let userHasNotStartedAnimationYet = true;
+//we need an animation handler 
+let diceAnimationHandler;
+//boolean flag to track if user has chosen to start or stop
+let keepSpinning = false;
+//the first image # in the group
+let currentImageNumber = 1;
+//the last image # in the group 
+const maxImageNumber = 6;
+
+//dice is clicked
+$('.start').click(function(){
+    
+    console.log("start dice animation cycle");
+    //
+    userHasNotStartedAnimationYet = false;
+    keepSpinning = true;
+    //start spin animation
+    diceAnimationHandler = requestAnimationFrame(spin);
+
+});
+
+
+//run spin() through each frame of the animation
+function spin(){
+    //count up by 1
+    currentImageNumber++;
+    //if end of images, start again
+    if( currentImageNumber > maxImageNumber ){
+        currentImageNumber = 1;
+    }
+    //update img
+    faceOfDie.src = `./imgs/dice${currentImageNumber}.png`;
+
+    //determine if we should keep spinning
+    //or if the user has clicked the stop button,
+    //stop the spin animation
+    if(keepSpinning === true){
+        setTimeout(function(){
+            requestAnimationFrame( spin );
+        }, 100);
+    }  
+    else{
+        keepSpinning = false;
+    }
+}
+
+//////////////////////////////////////////////////////////////////// not yet happening
+// REPLACE dice image to match the value rolled 
+//
+/* update the dice image PD1 with correct number */
+function updateDiceImagesPD1(player1dice1score){
+
+    let pathToImage = `./imgs/dice${player1dice1score}.png`;
+    $("#div2").attr("src", pathToImage);
+}
+
+/* update the dice image PD2 with correct number */
+function  updateDiceImagesPD2(player1dice2score){
+    let pathToImage = `./imgs/dice${player1dice2score}.png`;
+    $("#div3").attr("src", pathToImage);
+}
+
+/* update the dice image CD1 with correct number */
+function  updateDiceImagesCD1(compDice1score){
+    let pathToImage = `./imgs/dice${compDice1score}.png`;
+    $("#div22").attr("src", pathToImage);
+}
+
+/* update the dice image CD2 with correct number */
+function  updateDiceImagesCD2(compDice2score){
+    let pathToImage = `./imgs/dice${compDice2score}.PNpngG`;
+    $("#div23").attr("src", pathToImage);
+}
+////////////////////////////////////////////////////////////////////
 
 
 // call the footer
