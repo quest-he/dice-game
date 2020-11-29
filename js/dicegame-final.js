@@ -19,7 +19,7 @@ const hideshow = document.getElementById("hideshow");
 //overall results phrase
 const output   = document.getElementById("output");
 
-let output = ''; //prepare an empty string
+//let output = ''; //prepare an empty string
 
 let images = 6; //dice images
 
@@ -41,7 +41,7 @@ let compRound2Score = "";
 
 //keep track of round counter
 let counter = 0; 
-let counterlimit = 4;
+let counterLimit = 4;
 //start value = 0
 let startValue = 0;
 //player running total
@@ -95,31 +95,31 @@ DiceRoll.prototype.roll = function(){
 // DiceRoll Object
 // describeSelf function
 DiceRoll.prototype.describeSelf = function(){
-    //let output = "";
 
     output.innerHTML += `<p>You rolled a [ ${z} ].`;
-    console.log`${z}`;
+    console.log(`${z}`);
     
 }
 
 // Part 3
 // Player Object
-
 class Player {
+
     constructor( name ){
         this.name = name;
     }
-}
+}//////////////////////////////////////////////////// not yet using Player object?
+
 
 //Test instantiate Die object and display value
 const myDie = new Die(6);
 
 output.innerHTML += `${myDie.describeSelf()}`;
 //Test instantiate DiceRoll object
-const myDiceRoll = new DiceRoll();
+const myDiceRoll      = new DiceRoll();
 const myDiceRollDice2 = new DiceRoll();
-const compDiceRoll = new DiceRoll();
-const compDiceRoll2 = new DiceRoll();
+const compDiceRoll    = new DiceRoll();
+const compDiceRoll2   = new DiceRoll();
 
 
 rollDicebtn.addEventListener('click', function(event){
@@ -134,7 +134,7 @@ rollDicebtn.addEventListener('click', function(event){
         player1dice2score = parseInt(z);
         updateDiceImagesPD2(player1dice2score);//call updateDiceImages Function
     };
-    //computer
+    //Computer
     compDiceRoll.roll();{
         $('#div22Display').text(z);
         compDice1score = z;
@@ -145,82 +145,83 @@ rollDicebtn.addEventListener('click', function(event){
         compDice2score = z;
         updateDiceImagesCD2(compDice2score);//call updateDiceImages Function
     };
-    // Calculate Player Dice output
+
+    // calculate Player score output
     player1scoreOutput = parseInt(player1dice1score) + parseInt(player1dice2score);
     //rule set round score to 0 if encounter 1
-    if((player1dice1score == 1) || (player1dice2score == 1)){
+    if((player1dice1score == 1) || (player1dice2score == 1) ){
         player1scoreOutput = 0;
         player1dice1score  = 0;
         player1dice2score  = 0;
         $('#div4Display').text(player1scoreOutput);
-    }
-    
-    //rule set if roll a double number then Add total then times 2
+    }//rule set to add total of pairs and times them by 2
     if(player1dice1score % player1dice2score === 0 ){
-        player1scoreOutput = ((player1dice1score + player1dice2score)*2);
+        player1scoreOutput = ( (player1dice1score + player1dice2score)*2 );
+        $('#div4Display').text(player1scoreOutput);
+    } else {
+        (player1scoreOutput = parseInt(player1dice1score) + parseInt(player1dice2score));
+        $('#div4Display').text(player1scoreOutput);
     }
-    $('#div4Display').text(player1scoreOutput);
 
-    // Calculate Computer Dice output
+    // calculate Computer score output
     compScoreOutput = parseInt(compDice1score) + parseInt(compDice2score)
     //rule set round score to 0 if encounter 1
-    if((compDice1score === 1) || (compDice2score === 1)){
+    if((compDice1score === 1) || (compDice2score === 1) ){
         compScoreOutput = 0;
         compDice1score  = 0;
         compDice2score  = 0;
         $('#div24Display').text(compScoreOutput);
+    }//rule set to add total of pairs and times them by 2
+    if( compDice1score % compDice2score === 0 ){
+        compScoreOutput = ( (compDice1score + compDice2score)*2 );
+        $('#div24Display').text(compScoreOutput);
+
     } else {
         (compScoreOutput = parseInt(compDice1score) + parseInt(compDice2score));
         $('#div24Display').text(compScoreOutput);
     }
+     
     
-    //rule set if roll a double number then Add total then times 2
-    if(compDice1score % compDice2score === 0 ){
-        compScoreOutput = ((compDice1score + compDice2score)*2);
-    }
-    $('#div24Display').text(compScoreOutput);
-
-    //Keep value for round
-    player1round1score = 0 + parseInt(player1scoreOutput);
-    playerTotal = playerTotal + player1round1score;
+    //count values for total score
+    //player 1 score
+    player1round1score = 0 + parseInt( player1scoreOutput );
+    playerTotal        = playerTotal + player1round1score;
     $('#div5Display').text(playerTotal);
-
-    compRound1Score = 0 + parseInt(compScoreOutput);
-    compTotal = compTotal + compRound1Score;
+    //computer score
+    compRound1Score = 0 + parseInt( compScoreOutput );
+    compTotal       = compTotal + compRound1Score;
     $('#div25Display').text(compTotal);
 
-    
-
-    //round counter
+    //roll counter
     counter = counter + 1;
 
-    if((playerTotal > compTotal) && (counter === 4)){
-        alert('player1 wins');
-    } else if ((compTotal >= playerTotal ) && (counter === 4)) 
-        {
-            alert('computer wins');
-        }   
+    if( (playerTotal > compTotal) && (counter === 4) ){
+        alert('GAME OVER. Player 1 wins! The game will now reset.');
+    } 
+    else if ( (compTotal >= playerTotal ) && (counter === 4) ){
+        alert('GAME OVER. Computer wins! The game will now reset.');
+    }   
 
-    if( counter == counterlimit)
-    {
-        //give alert and reset to zero for all values
-        alert('Game over. Resetting game.');
+//game over = reset to zero for all values
+    if( counter == counterLimit ){
+        //player 1
         $('#div2Display').text(startValue);
         $('#div3Display').text(startValue);
         $('#div22Display').text(startValue);
         $('#div23Display').text(startValue);
-
+        //computer
         $('#div4Display').text(startValue);
         $('#div24Display').text(startValue);
         $('#div5Display').text(startValue);
         $('#div25Display').text(startValue);
+        
         player1scoreOutput = 0;
         compScoreOutput    = 0;
         player1round1score = 0;
-        compRound1Score = 0;
-        compTotal = 0;
-        playerTotal = 0;
-        counter = 0;
+        compRound1Score    = 0;
+        compTotal          = 0;
+        playerTotal        = 0;
+        counter            = 0;
 
     }
     //myDiceRoll.describeSelf();
