@@ -84,7 +84,7 @@ h3 {
     font-family: 'Lucida sans', monospace;
     font-weight:lighter;
     margin:0 auto;
-    padding-top:2px;
+    //padding-top:2px;
     color:maroon;
 }
 main {
@@ -140,6 +140,7 @@ section.hideshow p{
        is like stacking legos*/
     grid-template-areas:
     
+      "info info2"
       "dice dice2 "
       "play play2 ";
 
@@ -153,6 +154,16 @@ section.hideshow p{
 .d1{
     background:$container; 
     padding-bottom:1em;
+    grid-area:info;
+    max-height:403px;
+    height:100%;
+}
+.d11{
+    background: $container;
+    padding-bottom:1em;
+    grid-area:info2;
+
+
 }
 .d2{
     background:lightseagreen;
@@ -197,6 +208,7 @@ section.hideshow p{
 .diceAll{
     max-width:400px;
     height:100px;
+    src:url('./imgs/DiceAllSix.png');
 }
 .imge1{
     height:100%;

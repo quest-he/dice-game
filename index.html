@@ -37,34 +37,33 @@
     
     <main>
         <div class="container">
+            
+        </div>
+
+<!-- start game -->
+        <div class='container2'>
             <div class="d1">
 <!-- instructions: how to play  dice game -->        
                 <h3>How to Play</h3>
             <!-- delay output from .js -->
                 <div id='howtoplay'>&nbsp;</div> 
             </div>
-            <div class="d1">
+            <div class="d11">
 <!-- rules: of dice game -->        
                 <h3 id='rules'>Rules</h3>
             <!-- dropdown reveal -->
                 <button class='btn_show' id="btn_show">Show Rules</button>
                 <section class='hideshow'>
-                    <p>1. Please click the 'Roll All Dice' button three times!</p>
+                    <p>1. Please click to roll the dice three times!</p>
                     <p>2. If anyone rolls a 1, their score for 
                         that round is 0!</p>
                     <p>3. If anyone rolls a pair, add the faces 
                         and multiply the total by 2!</p>
                     <p>4. Any other combination, add the faces!</p>
                 </section>
-            </div>
-        </div>
-
-<!-- start game -->
-        <div class='container2'>
-                    
+            </div>        
             <div class="d2">
 <!-- player 1 die -->
-                <h2>Click to Roll Dice</h2>    
             <!-- dice 1 -->                
                 <button type="button" class="butn"
                         onClick="rollTheDice()"> 
@@ -85,7 +84,6 @@
             </div>
             <div class="d3">
 <!-- computer die -->
-                <h2>&nbsp;</h2>  
             <!-- dice 1 -->                  
                 <button type="button" class="butn"
                         onClick="rollTheDice()"> 
