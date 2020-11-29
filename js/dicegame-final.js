@@ -326,6 +326,8 @@ rollDicebtn.addEventListener('click', function(event){
         compTotal          = 0;
         playerTotal        = 0;
         counter            = 0;
+        player1.innerHTML  ='';
+        computer.innerHTML ='';
 
     }
     //myDiceRoll.describeSelf();
@@ -340,7 +342,7 @@ const $btnShow = $('.btn_show');
 $btnShow.click(function(){
 
     const $btn = $(this); //shows this element Class = button
-    const $rulesText = $(this).next(); //nxt element image and text
+    const $rulesText = $(this).next(); //next element image and text
 
     if($rulesText.is(':visible')){
         $btn.text('Show');
