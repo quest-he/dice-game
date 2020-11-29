@@ -388,7 +388,7 @@ function  updateDiceImagesCD1(compDice1score){
 
 /* update the dice image CD2 with correct number */
 function  updateDiceImagesCD2(compDice2score){
-    let pathToImage = `./imgs/dice${compDice2score}.PNpngG`;
+    let pathToImage = `./imgs/dice${compDice2score}.png`;
     $("#div23").attr("src", pathToImage);
 }
 ////////////////////////////////////////////////////////////////////
