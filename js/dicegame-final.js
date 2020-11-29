@@ -10,28 +10,34 @@
 //
 
 // HTML ELEMENTS
+//
+//dice roll phrase for each player
 const player1  = document.getElementById('player1-roll');
-const player2  = document.getElementById('player2-roll');
-const output   = document.getElementById("output");
+const computer = document.getElementById('player2-roll');
 //section id for hideshow
 const hideshow = document.getElementById("hideshow");
+//overall results phrase
+const output   = document.getElementById("output");
 
-let images = 6;
+let output = ''; //prepare an empty string
+
+let images = 6; //dice images
 
 let z = ""; //global variable
-let Player1Dice1score = 0;
-let Player1Dice2score = "";
-let CompDice1score = "";
-let CompDice2score = "";
 
-let Player1ScoreOutput = "";
-let CompScoreOutput = "";
+let player1dice1score = 0;
+let player1dice2score = "";
+let compDice1score = "";
+let compDice2score = "";
 
-let Player1Round1Score = "";
-let Player1Round2Score = "";
+let player1scoreOutput = "";
+let compScoreOutput = "";
 
-let CompRound1Score = "";
-let CompRound2Score = "";
+let player1round1score = "";
+let player1round2score = "";
+
+let compRound1Score = "";
+let compRound2Score = "";
 
 //keep track of round counter
 let counter = 0; 
@@ -47,57 +53,62 @@ let compTotal = 0;
 let numberOfDie = 0;
 
 
-// Part 1a
+// Part 1
 // Die Object
 class Die{
 
     constructor(value){
-        this.value=value;
+        this.value = value;
     }
     describeSelf(){
-        return `Die  is number:${this.value} `;
+        return `The die landed on a ${this.value}!`;
     }
 }
 
 // Part 2
-// Die Object
+// DiceRoll Object
 class DiceRoll{
 
     constructor(){
         this.values = [1,2,3,4,5,6];
     
-    
     }
 }
-// Part 2a  DiceRoll object Roll function
+// Part 2a  
+// DiceRoll Object
+// roll function
 DiceRoll.prototype.roll = function(){
 
     let i,j,x;
-    for( i=this.values.length-1; i>0; i-- ){
+    for( i = this.values.length - 1; i > 0; i-- ){
         //randomly select a die roll value
-        j = Math.floor(Math.random() * (i+1));
-        x=this.values[j];
-        //return z= output.innerHTML += `<p> ${x}`;
-        z=x;
+        j = Math.floor( Math.random() * ( i + 1 ));
+        x = this.values[j];
+        //return z = output.innerHTML += `<p> ${x}`;
+        z = x;
         //return $('#div2Display').text(z);
         return z;
     }
 }
 
-// Part 2b DiceRoll object describeSelf function
+// Part 2b
+// DiceRoll Object
+// describeSelf function
 DiceRoll.prototype.describeSelf = function(){
     //let output = "";
-    output.innerHTML += `<p>Dice rolled a number ${z}`;
+
+    output.innerHTML += `<p>You rolled a [ ${z} ].`;
     console.log`${z}`;
     
 }
-// Part 3 Players objects
+
+// Part 3
+// Player Object
 
 class Player {
-    constructor(name){
+    constructor( name ){
         this.name = name;
     }
-
 }
 
 //Test instantiate Die object and display value
@@ -115,67 +126,67 @@ rollDicebtn.addEventListener('click', function(event){
     //Player1
     myDiceRoll.roll();{
         $('#div2Display').text(z);
-        Player1Dice1score = parseInt(z);
-        updateDiceImagesPD1(Player1Dice1score);//call updateDiceImages Function
+        player1dice1score = parseInt(z);
+        updateDiceImagesPD1(player1dice1score);//call updateDiceImages Function
     };
     myDiceRollDice2.roll();{
         $('#div3Display').text(z);
-        Player1Dice2score = parseInt(z);
-        updateDiceImagesPD2(Player1Dice2score);//call updateDiceImages Function
+        player1dice2score = parseInt(z);
+        updateDiceImagesPD2(player1dice2score);//call updateDiceImages Function
     };
     //computer
     compDiceRoll.roll();{
         $('#div22Display').text(z);
-        CompDice1score = z;
-        updateDiceImagesCD1(CompDice1score);//call updateDiceImages Function
+        compDice1score = z;
+        updateDiceImagesCD1(compDice1score);//call updateDiceImages Function
     };
     compDiceRoll2.roll();{
         $('#div23Display').text(z);
-        CompDice2score = z;
-        updateDiceImagesCD2(CompDice2score);//call updateDiceImages Function
+        compDice2score = z;
+        updateDiceImagesCD2(compDice2score);//call updateDiceImages Function
     };
     // Calculate Player Dice output
-    Player1ScoreOutput = parseInt(Player1Dice1score) + parseInt(Player1Dice2score);
+    player1scoreOutput = parseInt(player1dice1score) + parseInt(player1dice2score);
     //rule set round score to 0 if encounter 1
-    if((Player1Dice1score == 1) || (Player1Dice2score == 1)){
-        Player1ScoreOutput = 0;
-        Player1Dice1score  = 0;
-        Player1Dice2score  = 0;
-        $('#div4Display').text(Player1ScoreOutput);
+    if((player1dice1score == 1) || (player1dice2score == 1)){
+        player1scoreOutput = 0;
+        player1dice1score  = 0;
+        player1dice2score  = 0;
+        $('#div4Display').text(player1scoreOutput);
     }
     
     //rule set if roll a double number then Add total then times 2
-    if(Player1Dice1score % Player1Dice2score === 0 ){
-        Player1ScoreOutput = ((Player1Dice1score + Player1Dice2score)*2);
+    if(player1dice1score % player1dice2score === 0 ){
+        player1scoreOutput = ((player1dice1score + player1dice2score)*2);
     }
-    $('#div4Display').text(Player1ScoreOutput);
+    $('#div4Display').text(player1scoreOutput);
 
     // Calculate Computer Dice output
-    CompScoreOutput = parseInt(CompDice1score) + parseInt(CompDice2score)
+    compScoreOutput = parseInt(compDice1score) + parseInt(compDice2score)
     //rule set round score to 0 if encounter 1
-    if((CompDice1score === 1) || (CompDice2score === 1)){
-        CompScoreOutput = 0;
-        CompDice1score  = 0;
-        CompDice2score  = 0;
-        $('#div24Display').text(CompScoreOutput);
+    if((compDice1score === 1) || (compDice2score === 1)){
+        compScoreOutput = 0;
+        compDice1score  = 0;
+        compDice2score  = 0;
+        $('#div24Display').text(compScoreOutput);
     } else {
-        (CompScoreOutput = parseInt(CompDice1score) + parseInt(CompDice2score));
-        $('#div24Display').text(CompScoreOutput);
+        (compScoreOutput = parseInt(compDice1score) + parseInt(compDice2score));
+        $('#div24Display').text(compScoreOutput);
     }
     
     //rule set if roll a double number then Add total then times 2
-    if(CompDice1score % CompDice2score === 0 ){
-        CompScoreOutput = ((CompDice1score + CompDice2score)*2);
+    if(compDice1score % compDice2score === 0 ){
+        compScoreOutput = ((compDice1score + compDice2score)*2);
     }
-    $('#div24Display').text(CompScoreOutput);
+    $('#div24Display').text(compScoreOutput);
 
     //Keep value for round
-    Player1Round1Score = 0 + parseInt(Player1ScoreOutput);
-    playerTotal = playerTotal + Player1Round1Score;
+    player1round1score = 0 + parseInt(player1scoreOutput);
+    playerTotal = playerTotal + player1round1score;
     $('#div5Display').text(playerTotal);
 
-    CompRound1Score = 0 + parseInt(CompScoreOutput);
-    compTotal = compTotal + CompRound1Score;
+    compRound1Score = 0 + parseInt(compScoreOutput);
+    compTotal = compTotal + compRound1Score;
     $('#div25Display').text(compTotal);
 
     
@@ -203,10 +214,10 @@ rollDicebtn.addEventListener('click', function(event){
         $('#div24Display').text(startValue);
         $('#div5Display').text(startValue);
         $('#div25Display').text(startValue);
-        Player1ScoreOutput = 0;
-        CompScoreOutput    = 0;
-        Player1Round1Score = 0;
-        CompRound1Score = 0;
+        player1scoreOutput = 0;
+        compScoreOutput    = 0;
+        player1round1score = 0;
+        compRound1Score = 0;
         compTotal = 0;
         playerTotal = 0;
         counter = 0;
@@ -236,27 +247,27 @@ $btnShow.click(function(){
 });
 
 /* update the dice image PD1 with correct number */
-function updateDiceImagesPD1(Player1Dice1score){
+function updateDiceImagesPD1(player1dice1score){
 
-    let pathToImage = `imgs/Dice${Player1Dice1score}.PNG`;
+    let pathToImage = `imgs/Dice${player1dice1score}.PNG`;
     $("#div2").attr("src", pathToImage);
 }
 
 /* update the dice image PD2 with correct number */
-function  updateDiceImagesPD2(Player1Dice2score){
-    let pathToImage = `imgs/Dice${Player1Dice2score}.PNG`;
+function  updateDiceImagesPD2(player1dice2score){
+    let pathToImage = `imgs/Dice${player1dice2score}.PNG`;
     $("#div3").attr("src", pathToImage);
 }
 
 /* update the dice image CD1 with correct number */
-function  updateDiceImagesCD1(CompDice1score){
-    let pathToImage = `imgs/Dice${CompDice1score}.PNG`;
+function  updateDiceImagesCD1(compDice1score){
+    let pathToImage = `imgs/Dice${compDice1score}.PNG`;
     $("#div22").attr("src", pathToImage);
 }
 
 /* update the dice image CD2 with correct number */
-function  updateDiceImagesCD2(CompDice2score){
-    let pathToImage = `imgs/Dice${CompDice2score}.PNG`;
+function  updateDiceImagesCD2(compDice2score){
+    let pathToImage = `imgs/Dice${compDice2score}.PNG`;
     $("#div23").attr("src", pathToImage);
 }
 

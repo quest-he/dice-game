@@ -22,30 +22,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JavaScript: Dice Game</title>
+    <title>Dice Game</title>
     <link rel="stylesheet" href="./css/dg.css">
+
 </head>
 <body>
-<!-- start rap -->
+
+<!-- start page rap -->
 <div class="rap">
+    
     <header>
-        <h1>JavaScript: Dice Game</h1>
+        <h1>Dice Game</h1>
     </header>
     
-    <main class='container'>
+    <main>
         <div class="container">
             <div class="d1">
 <!-- instructions: how to play  dice game -->        
                 <h3>how to play</h3>
+            <!-- delay output from .js -->
                 <p id='howtoplay'>&nbsp;</p> 
-                
-                
             </div>
             <div class="d1">
 <!-- rules: of dice game -->        
                 <h3 id='rules'>rules</h3>
-                <button class='btn_show' id="btn_show"> Show Rules </button>
-                <section class='hideshow' d="hideshow">
+            <!-- dropdown reveal -->
+                <button class='btn_show' id="btn_show">Show Rules</button>
+                <section class='hideshow' id="hideshow">
                     <p>1. Please click the 'Roll Dice' button three times!</p>
                     <p>2. If anyone rolls a 1, their score for 
                         that round is 0!</p>
@@ -129,7 +132,7 @@
 </div>
 
 <!-- external JavaScript -->
-<script src="js/jquery-3.4.1.min.js"></script>
+<script src="./js/jquery-3.4.1.min.js"></script>
 <script src="./js/dicegame-final.js"></script>
 
 </body>
