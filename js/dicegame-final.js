@@ -221,7 +221,7 @@ const myDiceRollDice2 = new DiceRoll();
 const compDiceRoll    = new DiceRoll();
 const compDiceRoll2   = new DiceRoll();
 
-
+//on click of dice button, roll
 rollDicebtn.addEventListener('click', function(event){
     //Player1
     myDiceRoll.roll();{
