@@ -221,7 +221,7 @@ const myDiceRollDice2 = new DiceRoll();
 const compDiceRoll    = new DiceRoll();
 const compDiceRoll2   = new DiceRoll();
 
-//on click of dice button, roll
+//on click Roll All Dice button
 rollDicebtn.addEventListener('click', function(event){
     //Player1
     myDiceRoll.roll();{
@@ -392,7 +392,114 @@ function rollTheDice() {
                             = ( play1 + " WINS!" ); 
         } 
     }, 2500); 
-} 
+    //Player1
+    myDiceRoll.roll();{
+        $('#div2Display').text(z);
+        player1dice1score = parseInt(z);
+        updateDiceImagesPD1(player1dice1score);//call updateDiceImages Function
+        player1.innerHTML += `Player rolled a ${player1dice1score}`;
+    };
+    myDiceRollDice2.roll();{
+        $('#div3Display').text(z);
+        player1dice2score = parseInt(z);
+        updateDiceImagesPD2(player1dice2score);//call updateDiceImages Function
+        player1.innerHTML += ` and a ${player1dice2score}.<br />`;
+    };
+    //Computer
+    compDiceRoll.roll();{
+        $('#div22Display').text(z);
+        compDice1score = z;
+        updateDiceImagesCD1(compDice1score);//call updateDiceImages Function
+        computer.innerHTML += `Computer rolled a ${compDice1score}`;
+
+    };
+    compDiceRoll2.roll();{
+        $('#div23Display').text(z);
+        compDice2score = z;
+        updateDiceImagesCD2(compDice2score);//call updateDiceImages Function
+        computer.innerHTML += ` and a ${compDice2score}.<br />`;
+    };
+
+    // calculate Player score output
+    player1scoreOutput = parseInt(player1dice1score) + parseInt(player1dice2score);
+    //rule set round score to 0 if encounter 1
+    if((player1dice1score == 1) || (player1dice2score == 1) ){
+        player1scoreOutput = 0;
+        player1dice1score  = 0;
+        player1dice2score  = 0;
+        $('#div4Display').text(player1scoreOutput);
+    }//rule set to add total of pairs and times them by 2
+    if(player1dice1score % player1dice2score === 0 ){
+        player1scoreOutput = ( (player1dice1score + player1dice2score)*2 );
+        $('#div4Display').text(player1scoreOutput);
+    } else {
+        (player1scoreOutput = parseInt(player1dice1score) + parseInt(player1dice2score));
+        $('#div4Display').text(player1scoreOutput);
+    }
+
+    // calculate Computer score output
+    compScoreOutput = parseInt(compDice1score) + parseInt(compDice2score)
+    //rule set round score to 0 if encounter 1
+    if((compDice1score === 1) || (compDice2score === 1) ){
+        compScoreOutput = 0;
+        compDice1score  = 0;
+        compDice2score  = 0;
+        $('#div24Display').text(compScoreOutput);
+    }//rule set to add total of pairs and times them by 2
+    if( compDice1score % compDice2score === 0 ){
+        compScoreOutput = ( (compDice1score + compDice2score)*2 );
+        $('#div24Display').text(compScoreOutput);
+
+    } else {
+        (compScoreOutput = parseInt(compDice1score) + parseInt(compDice2score));
+        $('#div24Display').text(compScoreOutput);
+    }
+    
+    //count values for total score
+    //player 1 score
+    player1round1score = 0 + parseInt( player1scoreOutput );
+    playerTotal        = playerTotal + player1round1score;
+    $('#div5Display').text(playerTotal);
+    //computer score
+    compRound1Score = 0 + parseInt( compScoreOutput );
+    compTotal       = compTotal + compRound1Score;
+    $('#div25Display').text(compTotal);
+
+    //roll counter
+    counter = counter + 1;
+
+    if( (playerTotal > compTotal) && (counter === 4) ){
+        alert(`GAME OVER. Player 1 wins! The game will now reset.`);
+    } 
+    else if ( (compTotal >= playerTotal ) && (counter === 4) ){
+        alert(`GAME OVER. Computer wins! The game will now reset.`);
+    }   
+
+//game over = reset to zero for all values
+    if( counter == counterLimit ){
+        //player 1
+        $('#div2Display').text(startValue);
+        $('#div3Display').text(startValue);
+        $('#div22Display').text(startValue);
+        $('#div23Display').text(startValue);
+        //computer
+        $('#div4Display').text(startValue);
+        $('#div24Display').text(startValue);
+        $('#div5Display').text(startValue);
+        $('#div25Display').text(startValue);
+        
+        player1scoreOutput = 0;
+        compScoreOutput    = 0;
+        player1round1score = 0;
+        compRound1Score    = 0;
+        compTotal          = 0;
+        playerTotal        = 0;
+        counter            = 0;
+        player1.innerHTML  ='';
+        computer.innerHTML ='';
+
+    }
+}
 
 
 
