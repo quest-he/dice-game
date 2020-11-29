@@ -70,7 +70,7 @@ header {
         letter-spacing: .2em;
         text-transform: uppercase;
 }}
-h2{
+h2 {
     font-size:24pt;
     font-family: 'Lucida sans', monospace;
     font-weight:lighter;
@@ -86,9 +86,6 @@ h3 {
     margin:0 auto;
     //padding-top:2px;
     color:maroon;
-}
-h3#glowText{
-    text-shadow: 1px 1px 0 coral;
 }
 main {
     flex-direction:column;
@@ -170,7 +167,7 @@ main {
     background: $container;
     padding-bottom:1em;
     grid-area:info2;
-    max-width:372.53px;
+
 
 }
 .d2{
@@ -264,9 +261,8 @@ main {
     height: 25px;
 }
 #div4Display{
-    border: 1px solid lightgoldenrodyellow;
+    border: 1px solid black;
     padding:2px;
-    background:lightgoldenrodyellow;
 }
 .div5{ //Player1 Total Score title
     margin: 5px;
@@ -276,7 +272,6 @@ main {
 #div5Display{
     border: 1px solid black;
     padding:2px;
-    background:lightcyan;
 }
 .div6{
     margin: 5px;
@@ -315,9 +310,8 @@ main {
     height: 25px;
 }
 #div24Display{
-    border: 1px solid lightgoldenrodyellow;
+    border: 1px solid black;
     padding:2px;
-    background:lightgoldenrodyellow;
 }
 .div25{ //computer Total Score title
     margin: 5px;
@@ -327,7 +321,6 @@ main {
 #div25Display{
     border: 1px solid black;
     padding:2px;
-    background:lightcyan;
 }
 .div26{
     margin: 5px;

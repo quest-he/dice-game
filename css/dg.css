@@ -83,6 +83,10 @@ h3 {
   color: maroon;
 }
 
+h3#glowText {
+  text-shadow: 1px 1px 0 coral;
+}
+
 main {
   flex-direction: column;
   flex-wrap: wrap;
@@ -168,6 +172,7 @@ section.hideshow p {
   background: lightgreen;
   padding-bottom: 1em;
   grid-area: info2;
+  max-width: 372.53px;
 }
 
 .d2 {
@@ -265,8 +270,9 @@ section.hideshow p {
 }
 
 #div4Display {
-  border: 1px solid black;
+  border: 1px solid lightgoldenrodyellow;
   padding: 2px;
+  background: lightgoldenrodyellow;
 }
 
 .div5 {
@@ -277,6 +283,7 @@ section.hideshow p {
 #div5Display {
   border: 1px solid black;
   padding: 2px;
+  background: lightcyan;
 }
 
 .div6 {
@@ -317,8 +324,9 @@ section.hideshow p {
 }
 
 #div24Display {
-  border: 1px solid black;
+  border: 1px solid lightgoldenrodyellow;
   padding: 2px;
+  background: lightgoldenrodyellow;
 }
 
 .div25 {
@@ -329,6 +337,7 @@ section.hideshow p {
 #div25Display {
   border: 1px solid black;
   padding: 2px;
+  background: lightcyan;
 }
 
 .div26 {

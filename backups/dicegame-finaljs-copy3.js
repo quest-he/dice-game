@@ -19,8 +19,8 @@ const computer  = document.getElementById('player2-roll');
 const hideshow  = document.getElementById("hideshow");
 
 //instructions for How to Play Dice Game
-var instructions = [`Click on a dice to stop its roll, or`,
-    `click the 'Roll All Dice' button below.`,
+var instructions = [`Click on a dice to start and stop its roll,`,
+    `or click the 'Roll All Dice' button below.`,
     `After three turns, the game is over.`,
     `Play as many rounds as you wish!`];
 var ul = document.createElement('ul'); //create ul element
