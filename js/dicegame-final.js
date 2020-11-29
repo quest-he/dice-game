@@ -49,8 +49,8 @@ let z = ""; //global variable
 
 let player1dice1score = 0;
 let player1dice2score = "";
-let compDice1score = "";
-let compDice2score = "";
+let comp1dice1score = "";
+let comp1dice2score = "";
 
 let player1scoreOutput = "";
 let compScoreOutput = "";
@@ -141,14 +141,14 @@ function  updateDiceImagesPD2(player1dice2score){
 }
 
 /* update the dice image CD1 with correct number */
-function  updateDiceImagesCD1(compDice1score){
-    let pathToImage = `./imgs/dice${compDice1score}.png`;
+function  updateDiceImagesCD1(comp1dice1score){
+    let pathToImage = `./imgs/dice${comp1dice1score}.png`;
     $("#div22").attr("src", pathToImage);
 }
 
 /* update the dice image CD2 with correct number */
-function  updateDiceImagesCD2(compDice2score){
-    let pathToImage = `./imgs/dice${compDice2score}.png`;
+function  updateDiceImagesCD2(comp1dice2score){
+    let pathToImage = `./imgs/dice${comp1dice2score}.png`;
     $("#div23").attr("src", pathToImage);
 }
 ////////////////////////////////////////////////////////////////////
@@ -239,16 +239,16 @@ rollDicebtn.addEventListener('click', function(event){
     //Computer
     compDiceRoll.roll();{
         $('#div22Display').text(z);
-        compDice1score = z;
-        updateDiceImagesCD1(compDice1score);//call updateDiceImages Function
-        computer.innerHTML += `Computer rolled a ${compDice1score}`;
+        comp1dice1score = z;
+        updateDiceImagesCD1(comp1dice1score);//call updateDiceImages Function
+        computer.innerHTML += `Computer rolled a ${comp1dice1score}`;
 
     };
     compDiceRoll2.roll();{
         $('#div23Display').text(z);
-        compDice2score = z;
-        updateDiceImagesCD2(compDice2score);//call updateDiceImages Function
-        computer.innerHTML += ` and a ${compDice2score}.<br />`;
+        comp1dice2score = z;
+        updateDiceImagesCD2(comp1dice2score);//call updateDiceImages Function
+        computer.innerHTML += ` and a ${comp1dice2score}.<br />`;
     };
 
     // calculate Player score output
@@ -269,20 +269,20 @@ rollDicebtn.addEventListener('click', function(event){
     }
 
     // calculate Computer score output
-    compScoreOutput = parseInt(compDice1score) + parseInt(compDice2score)
+    compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score)
     //rule set round score to 0 if encounter 1
-    if((compDice1score === 1) || (compDice2score === 1) ){
+    if((comp1dice1score === 1) || (comp1dice2score === 1) ){
         compScoreOutput = 0;
-        compDice1score  = 0;
-        compDice2score  = 0;
+        comp1dice1score  = 0;
+        comp1dice2score  = 0;
         $('#div24Display').text(compScoreOutput);
     }//rule set to add total of pairs and times them by 2
-    if( compDice1score % compDice2score === 0 ){
-        compScoreOutput = ( (compDice1score + compDice2score)*2 );
+    if( comp1dice1score % comp1dice2score === 0 ){
+        compScoreOutput = ( (comp1dice1score + comp1dice2score)*2 );
         $('#div24Display').text(compScoreOutput);
 
     } else {
-        (compScoreOutput = parseInt(compDice1score) + parseInt(compDice2score));
+        (compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score));
         $('#div24Display').text(compScoreOutput);
     }
     
@@ -365,33 +365,10 @@ function rollTheDice() {
         var rand3 = Math.floor(Math.random() * 6) + 1; 
         var rand4 = Math.floor(Math.random() * 6) + 1;
           
-    let player = rand1 + rand2 + 2;
-    let comp1 = rand3 + rand4 + 2;
+        let player = rand1 + rand2 + 2;
+        let comp1 = rand3 + rand4 + 2;
+    }, 2500);
 
-        document.querySelector(".img1").setAttribute("src", 
-            "./imgs/dice" + rand1 + ".png"); 
-
-        document.querySelector(".img2").setAttribute("src", 
-            "./imgs/dice" + rand2 + ".png"); 
-
-         document.querySelector(".img3").setAttribute("src", 
-            "./imgs/dice" + rand3 + ".png"); 
-
-        document.querySelector(".img4").setAttribute("src", 
-            "./imgs/dice" + rand4 + ".png");        
-
-        if (player === comp1) { 
-            document.querySelector("h1").innerHTML = "Draw!"; 
-        } 
-        else if (player < comp1) { 
-            document.querySelector("h1").innerHTML 
-                            = ( play2 + " WINS!" ); 
-        } 
-        else { 
-            document.querySelector("h1").innerHTML 
-                            = ( play1 + " WINS!" ); 
-        } 
-    }, 2500); 
     //Player1
     myDiceRoll.roll();{
         $('#div2Display').text(z);
@@ -408,16 +385,16 @@ function rollTheDice() {
     //Computer
     compDiceRoll.roll();{
         $('#div22Display').text(z);
-        compDice1score = z;
-        updateDiceImagesCD1(compDice1score);//call updateDiceImages Function
-        computer.innerHTML += `Computer rolled a ${compDice1score}`;
+        comp1dice1score = z;
+        updateDiceImagesCD1(comp1dice1score);//call updateDiceImages Function
+        computer.innerHTML += `Computer rolled a ${comp1dice1score}`;
 
     };
     compDiceRoll2.roll();{
         $('#div23Display').text(z);
-        compDice2score = z;
-        updateDiceImagesCD2(compDice2score);//call updateDiceImages Function
-        computer.innerHTML += ` and a ${compDice2score}.<br />`;
+        comp1dice2score = z;
+        updateDiceImagesCD2(comp1dice2score);//call updateDiceImages Function
+        computer.innerHTML += ` and a ${comp1dice2score}.<br />`;
     };
 
     // calculate Player score output
@@ -438,20 +415,20 @@ function rollTheDice() {
     }
 
     // calculate Computer score output
-    compScoreOutput = parseInt(compDice1score) + parseInt(compDice2score)
+    compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score)
     //rule set round score to 0 if encounter 1
-    if((compDice1score === 1) || (compDice2score === 1) ){
+    if((comp1dice1score === 1) || (comp1dice2score === 1) ){
         compScoreOutput = 0;
-        compDice1score  = 0;
-        compDice2score  = 0;
+        comp1dice1score  = 0;
+        comp1dice2score  = 0;
         $('#div24Display').text(compScoreOutput);
     }//rule set to add total of pairs and times them by 2
-    if( compDice1score % compDice2score === 0 ){
-        compScoreOutput = ( (compDice1score + compDice2score)*2 );
+    if( comp1dice1score % comp1dice2score === 0 ){
+        compScoreOutput = ( (comp1dice1score + comp1dice2score)*2 );
         $('#div24Display').text(compScoreOutput);
 
     } else {
-        (compScoreOutput = parseInt(compDice1score) + parseInt(compDice2score));
+        (compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score));
         $('#div24Display').text(compScoreOutput);
     }
     
