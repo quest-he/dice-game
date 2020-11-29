@@ -5,7 +5,7 @@
 //    BRUCE WONG + DAVID DEDA + HEATHER TIJMAN
 //-------------------------------------------
 //                 DICE GAME
-//   ⚀⚁⚂⚃⚄⚅      click to roll dice
+//   ⚀⚁⚂⚃⚄⚅      click to roll 
 //  🎲🎲  🎲🎲    2 players 2 dice each   
 //
 
@@ -13,53 +13,35 @@
 //
 const howToPlay = document.getElementById('howtoplay');
 //dice roll phrase for each player
-const player1  = document.getElementById('player1-roll');
-const computer = document.getElementById('player2-roll');
+const player1   = document.getElementById('player1-roll');
+const computer  = document.getElementById('player2-roll');
 //section id for hideshow
-const hideshow = document.getElementById("hideshow");
-
-//current time
-const startTime = Date.now();
-//delay in milliseconds
-const delay = 2000; //
-
-//this function runs after a 2 second delay
-setTimeout( revealHowToPlay, delay );
-//run the function
-function revealHowToPlay(){
-    //determine the actual time elapsed
-    console.log( `${Date.now() - startTime} = actual time elapsed from page load to run of revealHowToPlay()` );
-
-    //control show / hide #howtoplay with opacity animation
-    for (opacity = 0; opacity < 1.1; opacity = opacity + 0.1){
-        //setTimeout to fadeIn the opacity in .1 seconds            
-        setTimeout( function(){
-            howToPlay.style.opacity = opacity;
-        },  100)                       
-    }
-}
+const hideshow  = document.getElementById("hideshow");
 
 //instructions for How to Play Dice Game
 var instructions = [`Click on a dice to start and stop its roll or click the 'Roll All Dice' button below.`,
     `After three turns, the game is over.`,
     `Play as many rounds as you like!`];
-// create ul element and set the attributes
-var ul = document.createElement('ul');
-ul.setAttribute('style', 'padding: 0; margin: 0;');
+var ul = document.createElement('ul'); //create ul element
+//set attributes
+ul.setAttribute('style', 'padding: .5em; margin: 0;');
 ul.setAttribute('id', 'instructions');
 
+//for this length of list create element with these attributes and append it to HTML
 for (i = 0; i <= instructions.length - 1; i++) {
     var li = document.createElement('li'); // create li element
-    li.innerHTML = instructions[i]; // assigning text to li using array value
-    li.setAttribute('style', 'display: block;'); // remove the bullets
-    
-    ul.appendChild(li);     // append li to ul.
+    li.innerHTML = instructions[i]; // assign text to li using array value
+    li.setAttribute('style', 'display: block;'); // remove bullets
+    //append li to ul
+    ul.appendChild(li); 
 }
-
-howToPlay.appendChild(ul); // add list to the div
+//append list to the id / div
+howToPlay.appendChild(ul); 
 
 
 ///////////////////////////////////////
+// DICE VALUES AND ROLLING
+//
 let images = 6; //dice images
 
 let z = ""; //global variable
@@ -90,7 +72,6 @@ let compTotal = 0;
 
 //keep track of Die face number from 1-6
 let numberOfDie = 0;
-
 
 // Part 1
 // Die Object
@@ -379,7 +360,7 @@ function spin(){
         }, 100);
     }  
     else{
-        keepSpinning=false;
+        keepSpinning = false;
     }
 }
 
@@ -389,25 +370,25 @@ function spin(){
 /* update the dice image PD1 with correct number */
 function updateDiceImagesPD1(player1dice1score){
 
-    let pathToImage = `./imgs/Dice${player1dice1score}.PNG`;
+    let pathToImage = `./imgs/dice${player1dice1score}.png`;
     $("#div2").attr("src", pathToImage);
 }
 
 /* update the dice image PD2 with correct number */
 function  updateDiceImagesPD2(player1dice2score){
-    let pathToImage = `./imgs/Dice${player1dice2score}.PNG`;
+    let pathToImage = `./imgs/dice${player1dice2score}.png`;
     $("#div3").attr("src", pathToImage);
 }
 
 /* update the dice image CD1 with correct number */
 function  updateDiceImagesCD1(compDice1score){
-    let pathToImage = `./imgs/Dice${compDice1score}.PNG`;
+    let pathToImage = `./imgs/dice${compDice1score}.png`;
     $("#div22").attr("src", pathToImage);
 }
 
 /* update the dice image CD2 with correct number */
 function  updateDiceImagesCD2(compDice2score){
-    let pathToImage = `./imgs/Dice${compDice2score}.PNG`;
+    let pathToImage = `./imgs/dice${compDice2score}.PNpngG`;
     $("#div23").attr("src", pathToImage);
 }
 ////////////////////////////////////////////////////////////////////
