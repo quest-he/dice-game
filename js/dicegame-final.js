@@ -61,7 +61,7 @@ let player1round2score = "";
 let compRound1Score = "";
 let compRound2Score = "";
 
-//keep track of round counter
+//keep track rolls / turns / rounds counter
 let counter = 0; 
 let counterLimit = 4;
 //start value = 0
@@ -343,9 +343,9 @@ $btnShow.click(function(){
     const $rulesText = $(this).next(); //nxt element image and text
 
     if($rulesText.is(':visible')){
-        $btn.text('Show Rules');
+        $btn.text('Show');
     }else{
-        $btn.text('Hide Rules');
+        $btn.text('Hide');
     };
     $rulesText.slideToggle(500);
     $btn.parent().toggleClass('highlight');

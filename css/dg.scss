@@ -102,15 +102,20 @@ main {
         text-align:center;
     }
 }
-#rules{
-    padding-bottom:1.5em;
+//hide show animation reveal
+    #rules{
+        padding-bottom:1.5em;
+    }
+    section.hideshow p{
+        color: rgb(61, 0, 110);
+    }
+    #btn_show{
+        background: $bg;
+        color:ivory;
+        border:none;
+        padding:4px 100px;
 }
-section.hideshow p{
-    color: rgb(61, 0, 110);
-}
-
-
-.butn { 
+.butn { //dice roll buttons
     background: #4ecca3; 
     font-family: "Indie Flower", cursive; 
     border-radius: 50%; 

@@ -109,6 +109,13 @@ section.hideshow p {
   color: #3d006e;
 }
 
+#btn_show {
+  background: midnightblue;
+  color: ivory;
+  border: none;
+  padding: 4px 100px;
+}
+
 .butn {
   background: #4ecca3;
   font-family: "Indie Flower", cursive;
