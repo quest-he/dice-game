@@ -367,16 +367,16 @@ function rollTheDice() {
     let comp1 = rand3 + rand4 + 2;
 
         document.querySelector(".img1").setAttribute("src", 
-            "dice" + rand1 + ".png"); 
+            "./imgs/dice" + rand1 + ".png"); 
 
         document.querySelector(".img2").setAttribute("src", 
-            "dice" + rand2 + ".png"); 
+            "./imgs/dice" + rand2 + ".png"); 
 
          document.querySelector(".img3").setAttribute("src", 
-            "dice" + rand3 + ".png"); 
+            "./imgs/dice" + rand3 + ".png"); 
 
         document.querySelector(".img4").setAttribute("src", 
-            "dice" + rand4 + ".png");        
+            "./imgs/dice" + rand4 + ".png");        
 
         if (player === comp1) { 
             document.querySelector("h1").innerHTML = "Draw!"; 
