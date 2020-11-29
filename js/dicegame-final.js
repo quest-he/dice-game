@@ -11,12 +11,55 @@
 
 // HTML ELEMENTS
 //
+const howToPlay = document.getElementById('howtoplay');
 //dice roll phrase for each player
 const player1  = document.getElementById('player1-roll');
 const computer = document.getElementById('player2-roll');
 //section id for hideshow
 const hideshow = document.getElementById("hideshow");
 
+//current time
+const startTime = Date.now();
+//delay in milliseconds
+const delay = 2000; //
+
+//this function runs after a 2 second delay
+setTimeout( revealHowToPlay, delay );
+//run the function
+function revealHowToPlay(){
+    //determine the actual time elapsed
+    console.log( `${Date.now() - startTime} = actual time elapsed from page load to run of revealHowToPlay()` );
+
+    //control show / hide #howtoplay with opacity animation
+    for (opacity = 0; opacity < 1.1; opacity = opacity + 0.1){
+        //setTimeout to fadeIn the opacity in .1 seconds            
+        setTimeout( function(){
+            howToPlay.style.opacity = opacity;
+        },  100)                       
+    }
+}
+
+//instructions for How to Play Dice Game
+var instructions = [`Click on a dice to start and stop its roll or click the 'Roll All Dice' button below.`,
+    `After three turns, the game is over.`,
+    `Play as many rounds as you like!`];
+// create ul element and set the attributes
+var ul = document.createElement('ul');
+ul.setAttribute('style', 'padding: 0; margin: 0;');
+ul.setAttribute('id', 'instructions');
+
+for (i = 0; i <= instructions.length - 1; i++) {
+    var li = document.createElement('li'); // create li element
+    li.innerHTML = instructions[i]; // assigning text to li using array value
+    li.setAttribute('style', 'display: block;'); // remove the bullets
+    
+    ul.appendChild(li);     // append li to ul.
+}
+
+howToPlay.appendChild(ul); // add list to the div
+
+
+///////////////////////////////////////
 let images = 6; //dice images
 
 let z = ""; //global variable
@@ -290,9 +333,7 @@ cycle dice animation
 */
 
 //HTML Elements
-const faceOfDie      = document.getElementsByClassName("die");
-const startAnimation = document.getElementsByClassName('start');
-const stopAnimation  = document.getElementsByClassName("stop");
+const faceOfDie = document.getElementsByClassName("die");
 
 // BOOLEAN track if the user has started the animation
 let userHasNotStartedAnimationYet = true;
@@ -306,9 +347,9 @@ let currentImageNumber = 1;
 const maxImageNumber = 6;
 
 //dice is clicked
-$('.butn').click(function(){
+$('.start').click(function(){
     
-    console.log("Start");
+    console.log("start dice animation cycle");
     //
     userHasNotStartedAnimationYet = false;
     keepSpinning = true;
@@ -316,10 +357,7 @@ $('.butn').click(function(){
     diceAnimationHandler = requestAnimationFrame(spin);
 
 });
-//stop button is clicked, stop the animation
-stopAnimation.addEventListener("click", function(){
-    keepSpinning = false;
-});
+
 
 //run spin() through each frame of the animation
 function spin(){

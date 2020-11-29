@@ -109,6 +109,7 @@ main p {
 
 section.hideshow p {
   color: #3d006e;
+  opacity: 0;
 }
 
 .butn {
