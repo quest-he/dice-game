@@ -217,17 +217,6 @@ function rollTheDice() {
     compTotal       = compTotal + compRound1Score;
     $('#div25Display').text(compTotal);
 
-    //notify user of winner in the header
-    if (playerTotal === compTotal) { 
-        document.querySelector("h1").innerHTML = "Draw!"; 
-    } 
-    else if (playerTotal < compTotal) { 
-        document.querySelector("h1").innerHTML = ( play2 + " WINS!" ); 
-    } 
-    else { 
-        document.querySelector("h1").innerHTML = ( play1 + " WINS!" ); 
-    } 
-
     //roll counter
     counter = counter + 1;
 
@@ -341,17 +330,6 @@ rollDicebtn.addEventListener('click', function(event){
     compRound1Score = 0 + parseInt( compScoreOutput );
     compTotal       = compTotal + compRound1Score;
     $('#div25Display').text(compTotal);
-
-    //notify user of winner in the header
-    if (playerTotal === compTotal) { 
-        document.querySelector("h1").innerHTML = "Draw!"; 
-    } 
-    else if (playerTotal < compTotal) { 
-        document.querySelector("h1").innerHTML = ( play2 + " WINS!" ); 
-    } 
-    else { 
-        document.querySelector("h1").innerHTML = ( play1 + " WINS!" ); 
-    }
 
     //roll counter
     counter = counter + 1;
