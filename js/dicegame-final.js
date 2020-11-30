@@ -136,7 +136,7 @@ class Die{
         this.value = value;
     }
     describeSelf(){
-        return `The die is showing a value of ${this.value}.`;
+        return `The dice have ${this.value} possible values.`;
     }
 }
 
