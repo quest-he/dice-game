@@ -74,11 +74,6 @@ header {
         letter-spacing: .2em;
         text-transform: uppercase;
 }}
-img{
-    border:none;
-    height:100%;
-    width:100px;
-}
 main {
     flex-direction:column;
     flex-wrap:wrap;
@@ -105,6 +100,11 @@ main {
         font-weight:lighter;
         margin:0 auto;
         text-align:center;
+    }
+    img{
+        border:none;
+        height:100%;
+        width:100px;
     }
     p {
         color:$main;
@@ -134,14 +134,28 @@ main {
         padding:4px 100px;
     }
     #rules{
-    padding-bottom:1.5em;
+        padding-bottom:1.5em;
     }
+
 
 //new game button
 #btnNewGame{
     margin:1em auto;
+    color:indigo;
+    background:$bright;
+    padding: .8em 1em;
+    border:1px dashed violet;
 }
-.butn { //dice roll buttons
+#rollDicebtn{
+    color:indigo;
+    background:$bright;
+    padding:.8em 1em;
+    border:1px solid chartreuse;
+}
+#rollDicebtn:focus{
+    outline:none;
+}
+.butn { //dice img buttons
     //background: #4ecca3; 
     @include rounded-shaded-box(0, 0, 20px, $main);
     
@@ -237,30 +251,19 @@ main {
     justify-content:center;
     padding:1em;
 }
-//buttons
+//click buttons
 .d6{
     background:yellow;
 }
-.dice{
-    text-align: center; 
-    display: inline-block; 
-    margin: 10px; 
-} 
 
 /*flexbox*/
+//part 1
 .parent {
     //margin: 10px;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-collapse: collapse;
-}
-.div1{ //Player1 heading
-    
-    margin: 5px;
-    //margin-left: 50px;
-    border: 1px dashed $main;
     border-collapse: collapse;
 }
 .div2{  //Player1 Dice#1 title
@@ -290,21 +293,14 @@ main {
     padding:4px;
     background:lightcyan;
 }
-.div6{
-    margin: 5px;
-    border: 1px solid $main;
-}
+
+//part 2
 .parent2 {
     //margin: 10px;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-collapse: collapse;
-}
-.div21{ // COMPUTER heading
-    margin: 5px;
-    border: 1px dashed $main;
     border-collapse: collapse;
 }
 .div22{ //computer Dice#1
@@ -335,10 +331,4 @@ main {
     border: 1px solid $main;
     padding:4px;
     background:lightcyan;
-}
-.div26{
-    margin: 5px;
-    //width: 100px;
-    height: 50px;
-    border: 1px solid $main;
 }

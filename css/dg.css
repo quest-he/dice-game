@@ -62,12 +62,6 @@ header h1 {
   text-transform: uppercase;
 }
 
-img {
-  border: none;
-  height: 100%;
-  width: 100px;
-}
-
 main {
   flex-direction: column;
   flex-wrap: wrap;
@@ -98,6 +92,12 @@ main h3 {
   font-weight: lighter;
   margin: 0 auto;
   text-align: center;
+}
+
+main img {
+  border: none;
+  height: 100%;
+  width: 100px;
 }
 
 main p {
@@ -136,6 +136,21 @@ ol {
 
 #btnNewGame {
   margin: 1em auto;
+  color: indigo;
+  background: ivory;
+  padding: .8em 1em;
+  border: 1px dashed violet;
+}
+
+#rollDicebtn {
+  color: indigo;
+  background: ivory;
+  padding: .8em 1em;
+  border: 1px solid chartreuse;
+}
+
+#rollDicebtn:focus {
+  outline: none;
 }
 
 .butn {
@@ -233,24 +248,12 @@ ol {
   background: yellow;
 }
 
-.dice {
-  text-align: center;
-  display: inline-block;
-  margin: 10px;
-}
-
 /*flexbox*/
 .parent {
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-collapse: collapse;
-}
-
-.div1 {
-  margin: 5px;
-  border: 1px dashed black;
   border-collapse: collapse;
 }
 
@@ -287,22 +290,11 @@ ol {
   background: lightcyan;
 }
 
-.div6 {
-  margin: 5px;
-  border: 1px solid black;
-}
-
 .parent2 {
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-collapse: collapse;
-}
-
-.div21 {
-  margin: 5px;
-  border: 1px dashed black;
   border-collapse: collapse;
 }
 
@@ -337,10 +329,4 @@ ol {
   border: 1px solid black;
   padding: 4px;
   background: lightcyan;
-}
-
-.div26 {
-  margin: 5px;
-  height: 50px;
-  border: 1px solid black;
 }
