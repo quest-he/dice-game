@@ -62,28 +62,29 @@ Semantics: Heather
 ```
 
 ## Closer Look
-We ran into issues and did some troubleshooting of the following portions together:
-*The player and computer output strings were stacking because we missed including this code:
+We ran into issues and did some troubleshooting of the following portions together://
+
+* The player and computer output strings were stacking because we missed including this code:
 ```
 if( counter == counterLimit ){
     player1.innerHTML  ='';
     computer.innerHTML ='';
 }
 ```
-*h1 changes also stayed when resetting the game after 3 rolls and a successive click, so we added this:
+* h1 changes also stayed when resetting the game after 3 rolls and a successive click, so we added this:
 ```
 if( counter == counterLimit ){
 	document.querySelector("h1").innerHTML = ( 'DICE GAME' );
 }
 ```
-*Our game totals were not caluculating correctly. In this case for example, a roll of 6 and 3 gave a score of 18.
+* Our game totals were not caluculating correctly. In this case for example, a roll of 6 and 3 gave a score of 18.
 ```
 if( comp1dice1score % comp1dice2score === 0 ){
 	compScoreOutput = ( (comp1dice1score + comp1dice2score)*2 );
 	$('#div24Display').text(compScoreOutput);
 }
 ```
-*Before taking a closer look, our winner alert was calculated on the fourth roll.
+* Before taking a closer look, our winner alert was calculated on the fourth roll.
 ```
 if( (playerTotal > compTotal) && (counter === 4) ){
     alert(`GAME OVER. Player 1 wins! The game will now reset.`);
