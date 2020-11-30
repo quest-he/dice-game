@@ -52,13 +52,13 @@ header {
 header h1 {
   color: ivory;
   font-family: 'Lucida sans', monospace;
-  font-size: 48pt;
   font-weight: lighter;
+  font-size: 48pt;
   padding: 0;
   margin: 18px 4px 4px 4px;
-  text-align: center;
   line-height: 1.3em;
   letter-spacing: .2em;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -72,18 +72,17 @@ main h2:first-child {
 }
 
 main h2 {
+  color: maroon;
   font-size: 22pt;
   font-family: 'Lucida sans', monospace;
   font-weight: lighter;
   margin: 0 auto;
-  margin: 0;
   padding: .5em;
   line-height: 1.2em;
-  color: maroon;
 }
 
 main h2#glowText {
-  text-shadow: 1px 1px 0 te;
+  text-shadow: 1px 1px 0 cyan;
 }
 
 main h3 {
@@ -102,10 +101,10 @@ main img {
 
 main p {
   color: black;
-  padding: 1em 2em;
-  margin: 0;
-  line-height: 1.2em;
   font-size: 18px;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 1em 2em;
   text-align: center;
 }
 
@@ -155,9 +154,8 @@ ol {
 
 .butn {
   box-shadow: 0 0 20px lightgreen;
-  font-family: "Indie Flower", cursive;
   border-radius: 50%;
-  border: 1px solid  #4ecca3;
+  border: 1px solid #4ecca3;
   color: ivory;
   font-size: 30px;
   padding: 16px 25px 16px 25px;
@@ -175,14 +173,15 @@ ol {
 }
 
 .container {
+  background: lightgreen;
   font-size: 20px;
   width: 100%;
-  background: lightgreen;
   align-items: center;
   margin-top: 5%;
 }
 
 .container2 {
+  display: grid;
   font-size: 20px;
   width: 100%;
   grid-template-columns: auto auto;
@@ -190,43 +189,42 @@ ol {
   /* arranging the grid template areas 
        is like stacking legos*/
   grid-template-areas: "info info2" "dice dice2 " "play play2 ";
-  display: grid;
   align-items: center;
   margin: auto 0;
 }
 
 .d1 {
+  grid-area: info;
   background: lightgreen;
   padding-bottom: 1em;
-  grid-area: info;
   max-height: 403px;
   height: 100%;
 }
 
 .d11 {
+  grid-area: info2;
   background: lightgreen;
   padding-bottom: 1em;
-  grid-area: info2;
   max-width: 372.53px;
 }
 
 .d2 {
-  background: lightskyblue;
   grid-area: dice;
+  background: lightskyblue;
   align-items: center;
   padding: 1em;
 }
 
 .d3 {
-  background: lightseagreen;
   grid-area: dice2;
+  background: lightseagreen;
   align-items: center;
   padding: 1em;
 }
 
 .d4 {
-  background: lightskyblue;
   grid-area: play;
+  background: lightskyblue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -235,8 +233,8 @@ ol {
 }
 
 .d5 {
-  background: lightseagreen;
   grid-area: play2;
+  background: lightseagreen;
   display: flex;
   flex-direction: column;
   align-items: center;

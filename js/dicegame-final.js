@@ -14,7 +14,7 @@
 const howToPlay = document.getElementById('howtoplay');
 //dice roll phrase for each player
 const player1   = document.getElementById('player1-roll');
-const computer  = document.getElementById('player2-roll');
+const computer  = document.getElementById('computer-roll');
 //section id for hideshow
 const hideshow  = document.getElementById("hideshow");
 
@@ -28,7 +28,7 @@ var ul = document.createElement('ul'); //create ul element
 ul.setAttribute('style', 'padding: .5em; margin: 0;');
 ul.setAttribute('id', 'instructions');
 
-//for this length of list create element with these attributes and append it to HTML
+//for new ul element create li elements with these attributes and append it to the HTML
 for (i = 0; i <= instructions.length - 1; i++) {
     var li = document.createElement('li'); // create li element
     li.innerHTML = instructions[i]; // assign text to li using array value
@@ -394,6 +394,17 @@ rollDicebtn.addEventListener('click', function(event){
     compRound1Score = 0 + parseInt( compScoreOutput );
     compTotal       = compTotal + compRound1Score;
     $('#div25Display').text(compTotal);
+
+    //notify user of winner in the header
+    if (playerTotal === compTotal) { 
+        document.querySelector("h1").innerHTML = "Draw!"; 
+    } 
+    else if (playerTotal < compTotal) { 
+        document.querySelector("h1").innerHTML = ( play2 + " WINS!" ); 
+    } 
+    else { 
+        document.querySelector("h1").innerHTML = ( play1 + " WINS!" ); 
+    }
 
     //roll counter
     counter = counter + 1;
