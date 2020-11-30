@@ -236,7 +236,7 @@ function rollTheDice() {
     //after three turns alert results
     if((counter == 4) && ((playerTotal-player1round1score) > (compTotal-compRound1Score))){
         alert(`GAME OVER. Player 1 wins! The game will now reset.`);
-    } 
+    } //NOTE that we are minusing a fourth turn from the total score
     else if((counter == 4) && ((compTotal-compRound1Score) >= (playerTotal-player1round1score))){
         alert(`GAME OVER. Computer wins! The game will now reset.`);
     }     
@@ -361,7 +361,7 @@ rollDicebtn.addEventListener('click', function(event){
     //after three turns alert results
     if((counter == 4) && ((playerTotal-player1round1score) > (compTotal-compRound1Score))){
         alert(`GAME OVER. Player 1 wins! The game will now reset.`);
-    } 
+    } //NOTE that we are minusing a fourth turn from the total score
     else if((counter == 4) && ((compTotal-compRound1Score) >= (playerTotal-player1round1score))){
         alert(`GAME OVER. Computer wins! The game will now reset.`);
     }   
