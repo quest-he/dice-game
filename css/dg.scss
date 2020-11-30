@@ -90,10 +90,11 @@ main {
     }
     h2 {
         color:maroon;
-        font:{
-            size:22pt;
+        font: {
             family: 'Lucida sans', monospace;
             weight:lighter;
+            size:22pt;
+
         }
         margin:0 auto;
         padding: .5em;
@@ -103,10 +104,10 @@ main {
         text-shadow: 1px 1px 0 cyan;
     }
     h3{
-        font:{
+        font: {
             size:24pt;
             family: 'Lucida sans', monospace;
-            weight:lighter;
+            weight: lighter;
         }
         margin:0 auto;
         text-align:center;

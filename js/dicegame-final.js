@@ -285,6 +285,7 @@ function rollTheDice() {
     //roll counter
     counter = counter + 1;
 
+    //after three turns alert results
     if( (playerTotal > compTotal) && (counter === 4) ){
         alert(`GAME OVER. Player 1 wins! The game will now reset.`);
     } 
@@ -304,7 +305,7 @@ function rollTheDice() {
         $('#div24Display').text(startValue);
         $('#div5Display').text(startValue);
         $('#div25Display').text(startValue);
-        
+        //reset values
         player1scoreOutput = 0;
         compScoreOutput    = 0;
         player1round1score = 0;
@@ -312,11 +313,11 @@ function rollTheDice() {
         compTotal          = 0;
         playerTotal        = 0;
         counter            = 0;
+        //reset strings
         player1.innerHTML  ='';
         computer.innerHTML ='';
-
+        //reset heading
         document.querySelector("h1").innerHTML = ( 'DICE GAME' ); 
-
     }
 }
 
@@ -408,7 +409,8 @@ rollDicebtn.addEventListener('click', function(event){
 
     //roll counter
     counter = counter + 1;
-
+    
+    //after three turns alert results
     if( (playerTotal > compTotal) && (counter === 4) ){
         alert(`GAME OVER. Player 1 wins! The game will now reset.`);
     } 
@@ -416,7 +418,7 @@ rollDicebtn.addEventListener('click', function(event){
         alert(`GAME OVER. Computer wins! The game will now reset.`);
     }   
 
-//game over = reset to zero for all values
+    //game over = reset to zero for all values
     if( counter == counterLimit ){
         //player 1
         $('#div2Display').text(startValue);
@@ -428,7 +430,7 @@ rollDicebtn.addEventListener('click', function(event){
         $('#div24Display').text(startValue);
         $('#div5Display').text(startValue);
         $('#div25Display').text(startValue);
-        
+        //reset values
         player1scoreOutput = 0;
         compScoreOutput    = 0;
         player1round1score = 0;
@@ -436,11 +438,11 @@ rollDicebtn.addEventListener('click', function(event){
         compTotal          = 0;
         playerTotal        = 0;
         counter            = 0;
+        //reset strings
         player1.innerHTML  ='';
         computer.innerHTML ='';
-
+        //reset heading
         document.querySelector("h1").innerHTML = ( 'DICE GAME' ); 
-
     }
 });
 

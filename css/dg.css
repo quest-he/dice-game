@@ -73,9 +73,9 @@ main h2:first-child {
 
 main h2 {
   color: maroon;
-  font-size: 22pt;
   font-family: 'Lucida sans', monospace;
   font-weight: lighter;
+  font-size: 22pt;
   margin: 0 auto;
   padding: .5em;
   line-height: 1.2em;
