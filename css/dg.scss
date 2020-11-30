@@ -19,6 +19,9 @@ $bright:ivory;
 @mixin rounded-shaded-box($xoffset, $yoffset, $rounded-corners, $border-color){
     box-shadow:$xoffset $yoffset 20px $container;	  
 }
+@mixin rounded-shaded-box2($xoffset, $yoffset, $rounded-corners, $border-color){
+    box-shadow:$xoffset $yoffset 20px cyan;	  
+}
 
 //html elements
 html {

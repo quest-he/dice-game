@@ -40,10 +40,8 @@ for (i = 0; i <= instructions.length - 1; i++) {
 howToPlay.appendChild( ul ); 
 
 //Rules/instructions section
-// hide rules by default
-$('.hideshow').hide();
-//get button class as const $btnShow
-const $btnShow = $('.btn_show');
+$('.hideshow').hide(); // hide rules by default
+const $btnShow = $('.btn_show'); //get button class as const $btnShow
 //button click for HIDE SHOW Rules
 $btnShow.click(function(){
 
@@ -55,10 +53,9 @@ $btnShow.click(function(){
     }else{
         $btn.text('Hide');
     };
-    $rulesText.slideToggle(500);
+    $rulesText.slideToggle(500); //speed of slide
     $btn.parent().toggleClass('highlight');
 });
-
 
 ///////////////////////////////////////
 // DICE VALUES AND ROLLING
@@ -68,18 +65,17 @@ let images = 6; //dice images
 let z = ""; //global variable
 
 let player1dice1score = 0;
-let player1dice2score = "";
-let comp1dice1score = "";
-let comp1dice2score = "";
+let player1dice2score = 0;
+let comp1dice1score = 0;
+let comp1dice2score = 0;
 
-let player1scoreOutput = "";
-let compScoreOutput = "";
+let player1scoreOutput = 0;
+let compScoreOutput = 0;
 
-let player1round1score = "";
-let player1round2score = "";
-
-let compRound1Score = "";
-let compRound2Score = "";
+let player1round1score = 0;
+let player1round2score = 0;
+let compRound1Score = 0;
+let compRound2Score = 0;
 
 //keep track rolls / turns / rounds counter
 let counter = 0; 
@@ -91,7 +87,7 @@ let playerTotal = 0;
 //computer running total
 let compTotal = 0;
 
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////
 // Part 1
 // Die Object
 class Die{
@@ -141,7 +137,6 @@ const myDiceRollDice2 = new DiceRoll();
 const compDiceRoll    = new DiceRoll();
 const compDiceRoll2   = new DiceRoll();
 
-
 //function call from HTML
 //
 //CLICK ANY DICE to roll all dice
@@ -149,17 +144,6 @@ let play1 = "PLAYER 1";
 let play2 = "COMPUTER"; 
 
 function rollTheDice() { 
-    setTimeout(function () { 
-        var rand1 = Math.floor(Math.random() * 6) + 1; 
-        var rand2 = Math.floor(Math.random() * 6) + 1; 
-        var rand3 = Math.floor(Math.random() * 6) + 1; 
-        var rand4 = Math.floor(Math.random() * 6) + 1;
-          
-        player = rand1 + rand2 + 2;
-        comp1 = rand3 + rand4 + 2;
-
-    }, 2500);
-
     //Player1
     myDiceRoll.roll();{
         $('#div2Display').text(z);
@@ -250,12 +234,12 @@ function rollTheDice() {
     counter = counter + 1;
 
     //after three turns alert results
-    if( (playerTotal > compTotal) && (counter === 4) ){
+    if((counter == 4) && ((playerTotal-player1round1score) > (compTotal-compRound1Score))){
         alert(`GAME OVER. Player 1 wins! The game will now reset.`);
     } 
-    else if ( (compTotal >= playerTotal ) && (counter === 4) ){
+    else if((counter == 4) && ((compTotal-compRound1Score) >= (playerTotal-player1round1score))){
         alert(`GAME OVER. Computer wins! The game will now reset.`);
-    }   
+    }     
 
     //game over = reset to zero for all values
     if( counter == counterLimit ){
@@ -375,10 +359,10 @@ rollDicebtn.addEventListener('click', function(event){
     counter = counter + 1;
     
     //after three turns alert results
-    if( (playerTotal > compTotal) && (counter === 4) ){
+    if((counter == 4) && ((playerTotal-player1round1score) > (compTotal-compRound1Score))){
         alert(`GAME OVER. Player 1 wins! The game will now reset.`);
     } 
-    else if ( (compTotal >= playerTotal ) && (counter === 4) ){
+    else if((counter == 4) && ((compTotal-compRound1Score) >= (playerTotal-player1round1score))){
         alert(`GAME OVER. Computer wins! The game will now reset.`);
     }   
 
