@@ -62,7 +62,7 @@ Semantics: Heather
 ```
 
 ## Closer Look
-We ran into issues and did some troubleshooting of the following portions together://
+We ran into issues and did some troubleshooting of the following portions together:
 
 * The player and computer output strings were stacking because we missed including this code:
 ```
