@@ -18,25 +18,24 @@ const computer  = document.getElementById('computer-roll');
 //section id for hideshow
 const hideshow  = document.getElementById("hideshow");
 
-//How to Play Dice Game
-var instructions = [`Click on any dice to stop its roll, or`,
+//How to Play Dice Game instructions
+const instructions = [`Click on any dice to stop its roll, or`,
                     `click the 'Roll All Dice' button below.`,
                     `After three turns, the game is over.`,
                     `Play as many rounds as you wish!`];
-var ul = document.createElement('ul'); //create ul element
+const ul = document.createElement('ul'); //create ul element
 //set attributes
 ul.setAttribute('style', 'padding: .5em; margin: 0;');
 ul.setAttribute('id', 'instructions');
-
 //for new ul element create li elements with these attributes and append it to the HTML
 for (i = 0; i <= instructions.length - 1; i++) {
-    var li = document.createElement('li'); // create li element
+    const li = document.createElement('li'); // create li element
     li.innerHTML = instructions[i]; // assign text to li using array value
     li.setAttribute('style', 'display: block; padding:.5em;'); // remove bullets
     //append the li we just created to the ul
     ul.appendChild(li); 
 }
-//append list to the id / div
+//append our new list to the id / div
 howToPlay.appendChild( ul ); 
 
 //Rules/instructions section
@@ -130,7 +129,6 @@ DiceRoll.prototype.roll = function(){
 //Test instantiate Die object and display value
 const myDie = new Die(6);
 
-console.log(`${myDie.describeSelf()}`); //////////////////console logging 'myDie'
 //Test instantiate DiceRoll object
 const myDiceRoll      = new DiceRoll();
 const myDiceRollDice2 = new DiceRoll();
@@ -181,7 +179,7 @@ function rollTheDice() {
         player1dice2score  = 0;
         $('#div4Display').text(player1scoreOutput);
     }//rule set to add total of pairs and times them by 2
-    if(player1dice1score % player1dice2score === 0 ){
+    if( player1dice1score === player1dice2score ){
         player1scoreOutput = ( (player1dice1score + player1dice2score)*2 );
         $('#div4Display').text(player1scoreOutput);
     } else {
@@ -198,7 +196,7 @@ function rollTheDice() {
         comp1dice2score  = 0;
         $('#div24Display').text(compScoreOutput);
     }//rule set to add total of pairs and times them by 2
-    if( comp1dice1score % comp1dice2score === 0 ){
+    if( comp1dice1score === comp1dice2score ){
         compScoreOutput = ( (comp1dice1score + comp1dice2score)*2 );
         $('#div24Display').text(compScoreOutput);
 
@@ -320,7 +318,7 @@ rollDicebtn.addEventListener('click', function(event){
     compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score)
     //rule set round score to 0 if encounter 1
     if((comp1dice1score === 1) || (comp1dice2score === 1) ){
-        compScoreOutput = 0;
+        compScoreOutput  = 0;
         comp1dice1score  = 0;
         comp1dice2score  = 0;
         $('#div24Display').text(compScoreOutput);
@@ -394,7 +392,7 @@ rollDicebtn.addEventListener('click', function(event){
     }
 });
 
-///////////////////////////////////////
+/////////////////////////////////////////
 // REPLACE DICE IMAGE to match the value rolled
 //
 /* update the dice image PD1 with correct number */
@@ -421,7 +419,7 @@ function  updateDiceImagesCD2(comp1dice2score){
     let pathToImage = `./imgs/dice${comp1dice2score}.png`;
     $("#div23").attr("src", pathToImage);
 }
-
+//////////////////////////////////////////
 
 // call the footer
 const footNote = document.getElementById('footNote');
