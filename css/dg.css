@@ -21,8 +21,8 @@ body {
   line-height: 1.2em;
   margin: 0 auto;
   padding: 0;
-  min-width: 400px;
-  max-width: 1440px;
+  min-width: 745px;
+  max-width: 1024px;
   width: 95%;
   justify-content: center;
   text-align: center;
@@ -42,10 +42,7 @@ footer p {
 
 #rap {
   margin: 1em;
-  width: 100%;
-  /* for mobile */
-  max-width: 1024px;
-  /* for pc and tablet */
+  width: 745px;
 }
 
 header {
@@ -87,6 +84,13 @@ h3#glowText {
   text-shadow: 1px 1px 0 cyan;
 }
 
+img {
+  border: none;
+  box-shadow: 5px 5px 30px lightgreen;
+  height: 100%;
+  width: 100px;
+}
+
 main {
   flex-direction: column;
   flex-wrap: wrap;
@@ -105,17 +109,18 @@ main p {
   text-align: center;
 }
 
-#rules {
-  padding-bottom: 1.5em;
-}
-
 section.hideshow li {
   color: #3d006e;
   font-size: 16px;
+  padding-left: .5em;
 }
 
 section.hideshow li:first-child {
   padding-top: 1.5em;
+}
+
+ol {
+  padding-right: 1.5em;
 }
 
 #btn_show {
@@ -123,6 +128,10 @@ section.hideshow li:first-child {
   color: ivory;
   border: none;
   padding: 4px 100px;
+}
+
+#rules {
+  padding-bottom: 1.5em;
 }
 
 #btnNewGame {
@@ -161,9 +170,6 @@ section.hideshow li:first-child {
   /* arranging the grid template areas 
        is like stacking legos*/
   grid-template-areas: "info info2" "dice dice2 " "play play2 ";
-  /* this isnt the only way to do it 
-       but i like representing the grid 
-       items with names instead of numbers*/
   display: grid;
   align-items: center;
   margin: auto 0;
@@ -228,17 +234,6 @@ section.hideshow li:first-child {
   margin: 10px;
 }
 
-.imge1 {
-  height: 100%;
-  width: 100px;
-  box-shadow: 2px 2px 10px black;
-}
-
-.imge2 {
-  width: 100px;
-  box-shadow: 2px 2px 10px black;
-}
-
 /*flexbox*/
 .parent {
   padding: 10px;
@@ -257,14 +252,12 @@ section.hideshow li:first-child {
 .div2 {
   margin: 5px;
   height: 100px;
-  border: 1px solid black;
   border-collapse: collapse;
 }
 
 .div3 {
   margin: 5px;
   height: 100px;
-  border: 1px solid black;
 }
 
 .div4 {
@@ -311,14 +304,12 @@ section.hideshow li:first-child {
 .div22 {
   margin: 5px;
   height: 100px;
-  border: 1px solid black;
   border-collapse: collapse;
 }
 
 .div23 {
   margin: 5px;
   height: 100px;
-  border: 1px solid;
 }
 
 .div24 {

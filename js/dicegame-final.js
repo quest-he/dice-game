@@ -180,9 +180,9 @@ const compDiceRoll2   = new DiceRoll();
 
 //function call from HTML
 //
-//CLICK THE DICE to roll all dice ('Roll All Dice' button function below)
-var play1 = "PLAYER 1"; 
-var play2 = "COMPUTER"; 
+//CLICK ANY DICE to roll all dice
+let play1 = "PLAYER 1"; 
+let play2 = "COMPUTER"; 
 
 function rollTheDice() { 
     setTimeout(function () { 
@@ -191,8 +191,9 @@ function rollTheDice() {
         var rand3 = Math.floor(Math.random() * 6) + 1; 
         var rand4 = Math.floor(Math.random() * 6) + 1;
           
-        let player = rand1 + rand2 + 2;
-        let comp1 = rand3 + rand4 + 2;
+        player = rand1 + rand2 + 2;
+        comp1 = rand3 + rand4 + 2;
+
     }, 2500);
 
     //Player1
@@ -259,15 +260,28 @@ function rollTheDice() {
     }
     
     //count values for total score
+    //
     //player 1 score
     player1round1score = 0 + parseInt( player1scoreOutput );
     playerTotal        = playerTotal + player1round1score;
     $('#div5Display').text(playerTotal);
+
     //computer score
     compRound1Score = 0 + parseInt( compScoreOutput );
     compTotal       = compTotal + compRound1Score;
     $('#div25Display').text(compTotal);
 
+    //notify user of winner in the header
+    if (playerTotal === compTotal) { 
+        document.querySelector("h1").innerHTML = "Draw!"; 
+    } 
+    else if (playerTotal < compTotal) { 
+        document.querySelector("h1").innerHTML = ( play2 + " WINS!" ); 
+    } 
+    else { 
+        document.querySelector("h1").innerHTML = ( play1 + " WINS!" ); 
+    } 
+    
     //roll counter
     counter = counter + 1;
 

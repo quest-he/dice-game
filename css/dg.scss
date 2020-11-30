@@ -15,6 +15,12 @@ $main: black;
 $container: lightgreen;
 $bright:ivory;
 
+//mixins
+@mixin rounded-shaded-box($xoffset, $yoffset, $rounded-corners, $border-color){
+    box-shadow:$xoffset $yoffset 30px $container;	  
+}
+
+//html elements
 html {
     box-sizing:border-box;
     width:100%;
@@ -30,8 +36,8 @@ body {
     line-height: 1.2em;
     margin:0 auto;
     padding:0;
-    min-width:400px;
-    max-width:1440px;
+    min-width:745px;
+    max-width:1024px;
     width:95%;
     justify-content:center;
     text-align:center;
@@ -50,8 +56,8 @@ footer {
 ///////////////// page wrap div id
 #rap {
     margin:1em;
-    width: 100%;  /* for mobile */
-    max-width: 1024px; /* for pc and tablet */
+    width: 745px; 
+
 }////////////////
 
 header {
@@ -88,6 +94,12 @@ h3 {
 h3#glowText{
     text-shadow: 1px 1px 0 cyan;
 }
+img{
+    border:none;
+    @include rounded-shaded-box(5px, 5px, 20px, $container);
+    height:100%;
+    width:100px;
+}
 main {
     flex-direction:column;
     flex-wrap:wrap;
@@ -104,25 +116,30 @@ main {
     }
 }
 //hide show animation reveal
-    #rules{
-        padding-bottom:1.5em;
-    }
     section.hideshow li{
         color: rgb(61, 0, 110);
         font-size:16px;
+        padding-left:.5em;
     }
     section.hideshow li:first-child{
         padding-top:1.5em;
+    }
+    ol{
+        padding-right:1.5em;
     }
     #btn_show{
         background: $bg;
         color:$bright;
         border:none;
         padding:4px 100px;
-}
+    }
+    #rules{
+    padding-bottom:1.5em;
+    }
+
+//new game button
 #btnNewGame{
     margin:1em auto;
-
 }
 .butn { //dice roll buttons
     background: #4ecca3; 
@@ -138,6 +155,7 @@ main {
     background: #232931; 
     text-decoration: none; 
 }
+//top
 .container {
     font-size: 20px;
     width: 100%;
@@ -145,6 +163,7 @@ main {
     align-items:center;
     margin-top:5%;
 }
+//mid
 .container2{
     font-size: 20px;
     width: 100%;
@@ -158,13 +177,11 @@ main {
       "dice dice2 "
       "play play2 ";
 
-    /* this isnt the only way to do it 
-       but i like representing the grid 
-       items with names instead of numbers*/
     display:grid;
     align-items:center;
     margin: auto 0;
 }
+//how to play
 .d1{
     background:$container; 
     padding-bottom:1em;
@@ -172,6 +189,7 @@ main {
     max-height:403px;
     height:100%;
 }
+//rules
 .d11{
     background: $container;
     padding-bottom:1em;
@@ -179,18 +197,21 @@ main {
     max-width:372.53px;
 
 }
+//player dice
 .d2{
     background:lightskyblue;
     grid-area:dice;
     align-items:center;
     padding:1em;
 }
+//comp dice
 .d3{
     background:lightseagreen;
     grid-area:dice2;
     align-items:center;
     padding:1em;
 }
+//player output
 .d4{
     background:lightskyblue;
     grid-area:play;
@@ -200,6 +221,7 @@ main {
     justify-content:center;
     padding:1em;
 }
+//computer output
 .d5{
     background:lightseagreen;
     grid-area:play2;
@@ -209,6 +231,7 @@ main {
     justify-content:center;
     padding:1em;
 }
+//buttons
 .d6{
     background:yellow;
 }
@@ -217,18 +240,6 @@ main {
     display: inline-block; 
     margin: 10px; 
 } 
- 
-/////////////////////// img styling
-.imge1{
-    height:100%;
-    width:100px;
-    box-shadow:	2px	2px	10px $main;
-}
-.imge2{
-    width:100px;
-    box-shadow:	2px	2px	10px $main;
-}
-///////////////////////
 
 /*flexbox*/
 .parent {
@@ -248,20 +259,15 @@ main {
 }
 .div2{  //Player1 Dice#1 title
     margin: 5px;
-    //width: 50px;
     height:100px;
-    //font-size: 30px;
-    border: 1px solid $main;
     border-collapse: collapse;
 }
 .div3{ //Player1 Dice#2 title
     margin: 5px;
     height:100px;
-    border: 1px solid $main;
 }
 .div4{ //Player1 Score this round title
     margin: 5px;
-    //width: 50px;
     height: 25px;
 }
 #div4Display{
@@ -271,7 +277,6 @@ main {
 }
 .div5{ //Player1 Total Score title
     margin: 5px;
-    //width: 100px;
     height: 25px;
 }
 #div5Display{
@@ -281,7 +286,6 @@ main {
 }
 .div6{
     margin: 5px;
-    //width: 100px;
     border: 1px solid $main;
 }
 .parent2 {
@@ -299,16 +303,12 @@ main {
 }
 .div22{ //computer Dice#1
     margin: 5px;
-    //width: 50px;
     height:100px;
-    //font-size: 30px;
-    border: 1px solid $main;
     border-collapse: collapse;
 }
 .div23{ //computer Dice#2
     margin: 5px;
     height:100px;
-    border: 1px solid ;
 }
 .div24{ //computer Score this round title
     margin: 5px;
@@ -336,3 +336,4 @@ main {
     height: 50px;
     border: 1px solid $main;
 }
+
