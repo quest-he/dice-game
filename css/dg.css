@@ -1,8 +1,8 @@
 @import url("normalize.css");
 /*COMP 2132 - DICE GAME FINAL - Nov 19. 2020*/
-/*  Bruce Wong
-    David Deda
+/*  David Deda
     Heather Tijman
+    Bruce Wong
 */
 html {
   box-sizing: border-box;
@@ -84,7 +84,7 @@ h3 {
 }
 
 h3#glowText {
-  text-shadow: 1px 1px 0 coral;
+  text-shadow: 1px 1px 0 cyan;
 }
 
 main {
@@ -111,6 +111,11 @@ main p {
 
 section.hideshow p {
   color: #3d006e;
+  font-size: 16px;
+}
+
+section.hideshow p:first-child {
+  padding-top: 1.5em;
 }
 
 #btn_show {
@@ -118,6 +123,10 @@ section.hideshow p {
   color: ivory;
   border: none;
   padding: 4px 100px;
+}
+
+#btnNewGame {
+  margin: 1em auto;
 }
 
 .butn {
@@ -176,21 +185,21 @@ section.hideshow p {
 }
 
 .d2 {
-  background: lightseagreen;
+  background: lightskyblue;
   grid-area: dice;
   align-items: center;
   padding: 1em;
 }
 
 .d3 {
-  background: lightskyblue;
+  background: lightseagreen;
   grid-area: dice2;
   align-items: center;
   padding: 1em;
 }
 
 .d4 {
-  background: lightseagreen;
+  background: lightskyblue;
   grid-area: play;
   display: flex;
   flex-direction: column;
@@ -200,7 +209,7 @@ section.hideshow p {
 }
 
 .d5 {
-  background: lightskyblue;
+  background: lightseagreen;
   grid-area: play2;
   display: flex;
   flex-direction: column;
@@ -217,12 +226,6 @@ section.hideshow p {
   text-align: center;
   display: inline-block;
   margin: 10px;
-}
-
-.diceAll {
-  max-width: 400px;
-  height: 100px;
-  src: url("./imgs/DiceAllSix.png");
 }
 
 .imge1 {
@@ -270,8 +273,8 @@ section.hideshow p {
 }
 
 #div4Display {
-  border: 1px solid lightgoldenrodyellow;
-  padding: 2px;
+  border: 1px solid black;
+  padding: 4px;
   background: lightgoldenrodyellow;
 }
 
@@ -282,7 +285,7 @@ section.hideshow p {
 
 #div5Display {
   border: 1px solid black;
-  padding: 2px;
+  padding: 4px;
   background: lightcyan;
 }
 
@@ -315,7 +318,7 @@ section.hideshow p {
 .div23 {
   margin: 5px;
   height: 100px;
-  border: 1px solid black;
+  border: 1px solid;
 }
 
 .div24 {
@@ -325,7 +328,7 @@ section.hideshow p {
 
 #div24Display {
   border: 1px solid lightgoldenrodyellow;
-  padding: 2px;
+  padding: 4px;
   background: lightgoldenrodyellow;
 }
 
@@ -336,7 +339,7 @@ section.hideshow p {
 
 #div25Display {
   border: 1px solid black;
-  padding: 2px;
+  padding: 4px;
   background: lightcyan;
 }
 

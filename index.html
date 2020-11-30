@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- BCIT:COMP2132 -- Final Project -- Nov. 19. 2020 
-        Bruce Wong
         David Deda
-        Heather Tijman             
-    
-    
+        Heather Tijman 
+        Bruce Wong
+   
     /////////////////////
     
     NOOOOOTTTES  NOTES NOTES NOTES NOTES NOTES NOTES
@@ -55,12 +54,13 @@
             <!-- dropdown reveal -->
                 <button class='btn_show' id="btn_show">Show</button>
                 <section class='hideshow'>
-                    <p>1. Please click the dice three times to roll!</p>
+                    <p>1. Please click the dice or 'Roll All Dice' button 
+                        three times to roll!</p>
                     <p>2. If anyone rolls a 1, their score for 
                         that round is 0!</p>
                     <p>3. If anyone rolls a pair, add their roll together 
                         and multiply the total by 2!</p>
-                    <p>4. Any other combination, add the roll!</p>
+                    <p>4. Any other combination of number and the roll is added together!</p>
                 </section>
             </div>        
             <div class="d2">
@@ -132,9 +132,13 @@
             <h3 id='glowText'>Roll to win!</h3>
             
 <!-- reset button -->
-            <button id="newGamebtn" value="Refreshed page" 
-                    onclick="location.reload(true);">New Game</button>
-            <button id="rollDicebtn">Roll All Dice</button>
+            <button id="btnNewGame" 
+                    value="Refreshed page" 
+                    onclick="location.reload(true);">
+                    New Game</button>
+<!-- roll dice button -->
+            <button id="rollDicebtn">
+                    Roll All Dice</button>
         </div>                            
     </main>    
   

@@ -2,7 +2,7 @@
 // COMP 2132 - Final Project - Nov 19. 2020 |
 //-------------------------------------------
 // AUTHORED BY: 
-//    BRUCE WONG + DAVID DEDA + HEATHER TIJMAN
+//    DAVID DEDA + HEATHER TIJMAN + BRUCE WONG 
 //-------------------------------------------
 //                 DICE GAME
 //   ⚀⚁⚂⚃⚄⚅      click to roll 
@@ -19,10 +19,10 @@ const computer  = document.getElementById('player2-roll');
 const hideshow  = document.getElementById("hideshow");
 
 //instructions for How to Play Dice Game
-var instructions = [`Click on a dice to stop its roll, or`,
-    `click the 'Roll All Dice' button below.`,
-    `After three turns, the game is over.`,
-    `Play as many rounds as you wish!`];
+var instructions = [`Click on any dice to stop its roll, or`,
+                    `click the 'Roll All Dice' button below.`,
+                    `After three turns, the game is over.`,
+                    `Play as many rounds as you wish!`];
 var ul = document.createElement('ul'); //create ul element
 //set attributes
 ul.setAttribute('style', 'padding: .5em; margin: 0;');
@@ -33,11 +33,11 @@ for (i = 0; i <= instructions.length - 1; i++) {
     var li = document.createElement('li'); // create li element
     li.innerHTML = instructions[i]; // assign text to li using array value
     li.setAttribute('style', 'display: block; padding:.5em;'); // remove bullets
-    //append li to ul
+    //append the li we just created to the ul
     ul.appendChild(li); 
 }
 //append list to the id / div
-howToPlay.appendChild(ul); 
+howToPlay.appendChild( ul ); 
 
 
 ///////////////////////////////////////
@@ -80,51 +80,6 @@ let numberOfDie = 0;
 //HTML Elements
 const faceOfDie = document.getElementsByClassName("die");
 
-// BOOLEAN track if the user has started the animation
-let userHasNotStartedAnimationYet = true;
-
-let diceAnimationHandler; //we need an animation handler
-
-//boolean flag to track if user has chosen to start or stop
-let keepSpinning = false;
-
-let currentImageNumber = 1; //the first image # in the group
-const maxImageNumber = 6; //the last image # in the group 
-
-//dice is clicked
-$('.start').click(function(){
-    
-    console.log("Start dice animation cycle.");
-    //
-    userHasNotStartedAnimationYet = false;
-    keepSpinning = true;
-    //start spin animation
-    diceAnimationHandler = requestAnimationFrame(spin);
-
-});
-
-//run spin() through each frame of the animation
-function spin(){
-    //count up by 1
-    currentImageNumber++;
-    //if end of images, start again
-    if( currentImageNumber > maxImageNumber ){
-        currentImageNumber = 1;
-    }
-    //update img
-    faceOfDie.src = `./imgs/dice${currentImageNumber}.png`;
-
-    //determine if we should keep spinning
-    //or if the user has clicked the stop button,
-    //stop the spin animation
-    if(keepSpinning === true){
-        setTimeout(function(){
-            requestAnimationFrame( spin );
-        }, 100);
-    }//else{  keepSpinning = false; }
-}
-
-//////////////////////////////////////////////////////////////////// not yet happening
 // REPLACE dice image to match the value rolled 
 //
 /* update the dice image PD1 with correct number */
@@ -151,8 +106,8 @@ function  updateDiceImagesCD2(comp1dice2score){
     let pathToImage = `./imgs/dice${comp1dice2score}.png`;
     $("#div23").attr("src", pathToImage);
 }
-////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////
 // Part 1
 // Die Object
 class Die{
@@ -170,7 +125,7 @@ class Die{
 class DiceRoll{
 
     constructor(){
-        this.values = [1,2,3,4,5,6];
+        this.values = [ 1, 2, 3, 4, 5, 6 ];
     
     }
 }
@@ -258,14 +213,14 @@ rollDicebtn.addEventListener('click', function(event){
         player1scoreOutput = 0;
         player1dice1score  = 0;
         player1dice2score  = 0;
-        $('#div4Display').text(player1scoreOutput);
+        $('#div4Display').html(`<span style="color:darkred">${player1scoreOutput}</style>`);
     }//rule set to add total of pairs and times them by 2
     if(player1dice1score % player1dice2score === 0 ){
         player1scoreOutput = ( (player1dice1score + player1dice2score)*2 );
-        $('#div4Display').text(player1scoreOutput);
+        $('#div4Display').html(`<span style="color:darkred">${player1scoreOutput}</style>`);
     } else {
         (player1scoreOutput = parseInt(player1dice1score) + parseInt(player1dice2score));
-        $('#div4Display').text(player1scoreOutput);
+        $('#div4Display').html(`<span style="color:darkred">${player1scoreOutput}</style>`);
     }
 
     // calculate Computer score output
@@ -483,4 +438,4 @@ function rollTheDice() {
 // call the footer
 const footNote = document.getElementById('footNote');
 // footer output
-footNote.innerHTML = '\u00A9' + '2020 Bruce Wong, David Deda, Heather Tijman'; 
+footNote.innerHTML = '\u00A9' + '2020 David Deda, Heather Tijman, Bruce Wong'; 
