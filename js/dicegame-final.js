@@ -12,7 +12,7 @@
 // HTML ELEMENTS
 //
 const howToPlay = document.getElementById('howtoplay');
-//dice roll phrase for each player
+//dice roll phrase output for each player
 const player1   = document.getElementById('player1-roll');
 const computer  = document.getElementById('computer-roll');
 //section id for hideshow
@@ -91,42 +91,6 @@ let playerTotal = 0;
 //computer running total
 let compTotal = 0;
 
-//keep track of Die face number from 1-6
-let numberOfDie = 0;
-
-///////////////////////////////////////
-// CYCLE DICE ANIMATION
-//
-//HTML Elements
-const faceOfDie = document.getElementsByClassName("die");
-
-// REPLACE dice image to match the value rolled 
-//
-/* update the dice image PD1 with correct number */
-function updateDiceImagesPD1(player1dice1score){
-
-    let pathToImage = `./imgs/dice${player1dice1score}.png`;
-    $("#div2").attr("src", pathToImage);
-}
-
-/* update the dice image PD2 with correct number */
-function  updateDiceImagesPD2(player1dice2score){
-    let pathToImage = `./imgs/dice${player1dice2score}.png`;
-    $("#div3").attr("src", pathToImage);
-}
-
-/* update the dice image CD1 with correct number */
-function  updateDiceImagesCD1(comp1dice1score){
-    let pathToImage = `./imgs/dice${comp1dice1score}.png`;
-    $("#div22").attr("src", pathToImage);
-}
-
-/* update the dice image CD2 with correct number */
-function  updateDiceImagesCD2(comp1dice2score){
-    let pathToImage = `./imgs/dice${comp1dice2score}.png`;
-    $("#div23").attr("src", pathToImage);
-}
-
 ////////////////////////////////////////////////////////////////////
 // Part 1
 // Die Object
@@ -136,7 +100,7 @@ class Die{
         this.value = value;
     }
     describeSelf(){
-        return `The dice have ${this.value} possible values.`;
+        return `The dice in this game have ${this.value} possible values.`;
     }
 }
 
@@ -146,7 +110,6 @@ class DiceRoll{
 
     constructor(){
         this.values = [ 1, 2, 3, 4, 5, 6 ];
-    
     }
 }
 // Part 2a  
@@ -166,7 +129,8 @@ DiceRoll.prototype.roll = function(){
     }
 }
 
-//CREATE 6 DIE
+// CREATE 6 DIE
+//
 //Test instantiate Die object and display value
 const myDie = new Die(6);
 
@@ -354,13 +318,13 @@ rollDicebtn.addEventListener('click', function(event){
     // calculate Player score output
     player1scoreOutput = parseInt(player1dice1score) + parseInt(player1dice2score);
     //rule set round score to 0 if encounter 1
-    if((player1dice1score == 1) || (player1dice2score == 1) ){
+    if((player1dice1score === 1) || (player1dice2score === 1) ){
         player1scoreOutput = 0;
         player1dice1score  = 0;
         player1dice2score  = 0;
         $('#div4Display').html(`<span style="color:red">${player1scoreOutput}</style>`);
     }//rule set to add total of pairs and times them by 2
-    if(player1dice1score % player1dice2score === 0 ){
+    if(player1dice1score === player1dice2score ){
         player1scoreOutput = ( (player1dice1score + player1dice2score)*2 );
         $('#div4Display').text( player1scoreOutput );
     } else {
@@ -377,7 +341,7 @@ rollDicebtn.addEventListener('click', function(event){
         comp1dice2score  = 0;
         $('#div24Display').text(compScoreOutput);
     }//rule set to add total of pairs and times them by 2
-    if( comp1dice1score % comp1dice2score === 0 ){
+    if( comp1dice1score === comp1dice2score ){
         compScoreOutput = ( (comp1dice1score + comp1dice2score)*2 );
         $('#div24Display').text(compScoreOutput);
 
@@ -445,6 +409,34 @@ rollDicebtn.addEventListener('click', function(event){
         document.querySelector("h1").innerHTML = ( 'DICE GAME' ); 
     }
 });
+
+///////////////////////////////////////
+// REPLACE DICE IMAGE to match the value rolled
+//
+/* update the dice image PD1 with correct number */
+function updateDiceImagesPD1(player1dice1score){
+
+    let pathToImage = `./imgs/dice${player1dice1score}.png`;
+    $("#div2").attr("src", pathToImage);
+}
+
+/* update the dice image PD2 with correct number */
+function  updateDiceImagesPD2(player1dice2score){
+    let pathToImage = `./imgs/dice${player1dice2score}.png`;
+    $("#div3").attr("src", pathToImage);
+}
+
+/* update the dice image CD1 with correct number */
+function  updateDiceImagesCD1(comp1dice1score){
+    let pathToImage = `./imgs/dice${comp1dice1score}.png`;
+    $("#div22").attr("src", pathToImage);
+}
+
+/* update the dice image CD2 with correct number */
+function  updateDiceImagesCD2(comp1dice2score){
+    let pathToImage = `./imgs/dice${comp1dice2score}.png`;
+    $("#div23").attr("src", pathToImage);
+}
 
 
 // call the footer
