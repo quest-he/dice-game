@@ -43,6 +43,7 @@ Merge + Operation Updates: Heather
 * object creation: Bruce
 * rollDicebtn: Bruce
 * rollTheDice: David
+* score outputs: Heather + Bruce
 * footer: Heather
 ```
 * SCSS
@@ -62,7 +63,7 @@ Semantics: Heather
 
 ## Closer Look
 We ran into issues and did some troubleshooting of the following portions together:
-*The player and computer output strings were stacking because we were missing this code:
+*The player and computer output strings were stacking because we missed including this code:
 ```
 if( counter == counterLimit ){
     player1.innerHTML  ='';
