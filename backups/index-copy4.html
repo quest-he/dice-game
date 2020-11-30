@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- BCIT:COMP2132 - Final Project - Nov. 19. 2020 
+        David Deda
+        Heather Tijman 
+        Bruce Wong
+   
+    /////////////////////
+    
+    NOOOOOTTTES  NOTES NOTES NOTES NOTES NOTES NOTES
+
+✓   - every img MUST have an alt
+✓   - there must be NO internal styles in the HTML
+    - validate code before submission
+✓   - comment out all code
+✓   - create a README.md that outlines the project
+    
+    /////////////////////
+
+    -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="./css/dg.css">
+
+</head>
+<body>
+
+<!-- start page rap -->
+<div class="rap">
+    
+    <header>
+        <h1>Dice Game</h1>
+    </header>
+    
+    <main>
+<!-- start game -->
+        <div class='container2'>
+            <div class="d1">
+<!-- instructions: how to play  dice game -->        
+                <h2>How to Play</h2>
+            <!-- delay output from .js -->
+                <div id='howtoplay'>&nbsp;</div> 
+            </div>
+            <div class="d11">
+<!-- rules: of dice game -->        
+                <h2 id='rules'>Rules</h2>
+            <!-- dropdown reveal -->
+                <button class='btn_show' id="btn_show">Show</button>
+                <section class='hideshow'>
+                    <ol>
+                        <li>Please click the dice or 'Roll All Dice' button 
+                            three times to roll!</li>
+                        <li>If anyone rolls a 1, their score for 
+                            that round is 0!</li>
+                        <li>If anyone rolls a pair, add their roll together 
+                            and multiply the total by 2!</li>
+                        <li>Any other combination of numbers and the roll is added together.</li>
+                        <li>The highest total score wins!</li>
+                    </ol>
+                </section>
+            </div>        
+            <div class="d2">
+<!-- player 1 die -->
+            <!-- dice 1 -->                
+                <button type="button" class="butn"
+                        onClick="rollTheDice()"> 
+                    <img class="div2 die" id="div2"
+                         src="./imgs/diceAll3.gif"
+                         alt="a 6 sided-die" /> 
+                </button> 
+                
+            <!-- dice 2 -->
+                <button type="button" class="butn"
+                        onClick="rollTheDice()"> 
+                    <img class="div3 die" id="div3"
+                         src="./imgs/diceAll6.gif"
+                         alt="a 6 sided-die" /> 
+                </button> 
+               
+            </div>
+            <div class="d3">
+<!-- computer die -->
+            <!-- dice 1 -->                  
+                <button type="button" class="butn"
+                        onClick="rollTheDice()"> 
+                    <img class="div22 die" id="div22"
+                         src="./imgs/diceAll5.gif"
+                         alt="a 6 sided-die" />
+                </button>
+                
+            <!-- dice 2-->
+                <button type="button" class="butn"
+                        onClick="rollTheDice()"> 
+                    <img class="div23 die" id="div23"
+                         src="./imgs/diceAll2.gif"
+                         alt="a 6 sided-die" />
+                </button>               
+            </div>
+
+            <div class="parent d4">
+<!-- player 1 output -->
+                <h3>Player 1</h3>
+                <p id='player1-roll'></p>
+            <!--<div id="div2Display">dice 1</div>
+                <div id="div3Display">dice 2</div> -->    
+                <div class="div4">Score This Round</div>
+                <div id="div4Display">Score Output</div>
+                <div class="div5">Total Score</div>
+                <div id="div5Display">Total Output</div>                
+            </div>    
+<!-- computer output -->
+            <div class="parent2 d5">
+                <h3>Computer</h3>
+                <p id='computer-roll'></p>
+            <!--<div id="div22Display">dice 1</div>
+                <div id="div23Display">dice 2</div> -->    
+                <div class="div24">Score This Round</div>
+                <div id="div24Display">Score Output</div>
+                <div class="div25">Total Score</div>
+                <div id="div25Display">Total Output</div>
+            </div>
+
+        </div>               
+           
+<!-- results output -->
+        <div class='d6'>
+            <h2 id='glowText'>Roll to win!</h2>
+            
+<!-- reset button -->
+            <button id="btnNewGame" 
+                    value="Refreshed page" 
+                    onclick="location.reload(true);">
+                    New Game</button>
+<!-- roll dice button -->
+            <button id="rollDicebtn">
+                    Roll All Dice</button>
+        </div>                            
+    </main>    
+  
+<!-- site author info -->
+    <footer>
+        <p id='footNote'></p>
+    </footer>
+<!-- final rap -->
+</div>
+
+<!-- external JavaScript -->
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/dicegame-final.js"></script>
+
+</body>
+</html>

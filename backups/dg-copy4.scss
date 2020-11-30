@@ -1,0 +1,340 @@
+@charset "utf-8";
+//import css reset 
+@import url("normalize.css");
+
+/*COMP 2132 - DICE GAME FINAL - Nov 19. 2020*/
+
+/*  David Deda
+    Heather Tijman
+    Bruce Wong
+*/
+
+//site colours
+$bg: midnightblue;
+$main: black;
+$container: lightgreen;
+$bright:ivory;
+
+//mixins
+@mixin rounded-shaded-box($xoffset, $yoffset, $rounded-corners, $border-color){
+    box-shadow:$xoffset $yoffset 20px $container;	  
+}
+
+//html elements
+html {
+    box-sizing:border-box;
+    width:100%;
+    background-color: $bg;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+	background-color: $bg;
+    color: $main;
+    display:flex;
+    line-height: 1.2em;
+    margin:0 auto;
+    padding:0;
+    min-width:745px;
+    max-width:1024px;
+    width:95%;
+    justify-content:center;
+    text-align:center;
+    font: {
+        size: 18px;
+        family: 'Calibri', sans-serif, monospace;
+}}
+footer {
+    padding: 20px;
+    color:$bright;
+    p {
+    line-height: 1;
+    margin: 0;
+    }
+}
+///////////////// page wrap div id
+#rap {
+    margin:1em;
+    width: 745px; 
+
+}////////////////
+
+header {
+    width:99.7%;
+    h1 {
+        color:$bright;
+        font: {
+            family: 'Lucida sans', monospace;
+            weight:lighter;
+            size: 48pt;
+        }
+        padding:0;
+        margin: 18px 4px 4px 4px;
+        
+        line-height:1.3em;
+        letter-spacing: .2em;
+        text: {
+            align:center;
+            transform: uppercase;
+        }
+    }
+}
+main {
+    flex: {
+        direction:column;
+        wrap:wrap;
+    }
+    h2:first-child{
+        padding-top:.7em;
+    }
+    h2 {
+        color:maroon;
+        font:{
+            size:22pt;
+            family: 'Lucida sans', monospace;
+            weight:lighter;
+        }
+        margin:0 auto;
+        padding: .5em;
+        line-height: 1.2em;
+    }
+    h2#glowText{
+        text-shadow: 1px 1px 0 cyan;
+    }
+    h3{
+        font:{
+            size:24pt;
+            family: 'Lucida sans', monospace;
+            weight:lighter;
+        }
+        margin:0 auto;
+        text-align:center;
+    }
+    img{
+        border:none;
+        height:100%;
+        width:100px;
+    }
+    p {
+        color:$main;
+        font-size:18px;
+        line-height:1.2em;
+        margin:0;
+        padding:1em 2em;
+        text-align:center;
+    }
+}
+//hide show animation reveal
+    section.hideshow li{
+        color: rgb(61, 0, 110);
+        font-size:16px;
+        padding-left:.5em;
+    }
+    section.hideshow li:first-child{
+        padding-top:1.5em;
+    }
+    ol{
+        padding-right:1.5em;
+    }
+    #btn_show{
+        background: $bg;
+        color:$bright;
+        border:none;
+        padding:4px 100px;
+    }
+    #rules{
+        padding-bottom:1.5em;
+    }
+
+
+//new game button
+#btnNewGame{
+    margin:1em auto;
+    color:indigo;
+    background:$bright;
+    padding: .8em 1em;
+    border:1px dashed violet;
+}
+#rollDicebtn{
+    color:indigo;
+    background:$bright;
+    padding:.8em 1em;
+    border:1px solid chartreuse;
+}
+    #rollDicebtn:focus{
+        outline:none;
+    }
+.butn { //dice img buttons
+    //background: #4ecca3; 
+    @include rounded-shaded-box(0, 0, 20px, $main);
+    border-radius: 50%; 
+    border: 1px solid #4ecca3;
+    color: $bright; 
+    font-size: 30px; 
+    padding: 16px 25px 16px 25px; 
+    text-decoration: none;
+    position:relative;
+} 
+    .butn:focus {
+        outline: none;
+    }
+    .butn:hover { 
+        background: #232931; 
+        text-decoration: none; 
+    }
+//top
+.container {
+    background: $container;
+    font-size: 20px;
+    width: 100%;
+    align-items:center;
+    margin-top:5%;
+}
+//mid
+.container2{
+    display:grid;
+    font-size: 20px;
+    width: 100%;
+    grid-template-columns: auto auto ;
+    grid-template-rows: auto;
+    /* arranging the grid template areas 
+       is like stacking legos*/
+    grid-template-areas:
+    
+      "info info2"
+      "dice dice2 "
+      "play play2 ";
+
+    align-items:center;
+    margin: auto 0;
+}
+//how to play
+.d1{
+    grid-area:info;
+    background:$container; 
+    padding-bottom:1em;
+    max-height:403px;
+    height:100%;
+}
+//rules
+.d11{
+    grid-area:info2;
+    background: $container;
+    padding-bottom:1em;
+    max-width:372.53px;
+
+}
+//player dice
+.d2{
+    grid-area:dice;
+    background:lightskyblue;
+    align-items:center;
+    padding:1em;
+}
+//comp dice
+.d3{
+    grid-area:dice2;
+    background:lightseagreen;
+    align-items:center;
+    padding:1em;
+}
+//player output
+.d4{
+    grid-area:play;
+    background:lightskyblue;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:1em;
+}
+//computer output
+.d5{
+    grid-area:play2;
+    background:lightseagreen;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:1em;
+}
+//click buttons
+.d6{
+    background:yellow;
+}
+
+/*flexbox*/
+//part 1 -- player 1 info
+.parent {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-collapse: collapse;
+}
+.div2{  //Player1 Dice#1 title
+    margin: 5px;
+    height:100px;
+    border-collapse: collapse;
+}
+.div3{ //Player1 Dice#2 title
+    margin: 5px;
+    height:100px;
+}
+.div4{ //Player1 Score this round title
+    margin: 5px;
+    height: 25px;
+}
+#div4Display{
+    border: 1px solid $main;
+    padding:4px;
+    background:lightgoldenrodyellow;
+}
+.div5{ //Player1 Total Score title
+    margin: 5px;
+    height: 25px;
+}
+#div5Display{
+    border: 1px solid $main;
+    padding:4px;
+    background:lightcyan;
+}
+
+//part 2 -- computer info
+.parent2 {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-collapse: collapse;
+}
+.div22{ //computer Dice#1
+    margin: 5px;
+    height:100px;
+    border-collapse: collapse;
+}
+.div23{ //computer Dice#2
+    margin: 5px;
+    height:100px;
+}
+.div24{ //computer Score this round title
+    margin: 5px;
+    //width: 50px;
+    height: 25px;
+}
+#div24Display{
+    border: 1px solid lightgoldenrodyellow;
+    padding:4px;
+    background:lightgoldenrodyellow;
+}
+.div25{ //computer Total Score title
+    margin: 5px;
+    //width: 100px;
+    height: 25px;
+}
+#div25Display{
+    border: 1px solid $main;
+    padding:4px;
+    background:lightcyan;
+}
