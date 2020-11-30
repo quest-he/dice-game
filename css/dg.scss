@@ -17,7 +17,7 @@ $bright:ivory;
 
 //mixins
 @mixin rounded-shaded-box($xoffset, $yoffset, $rounded-corners, $border-color){
-    box-shadow:$xoffset $yoffset 30px $container;	  
+    box-shadow:$xoffset $yoffset 20px $container;	  
 }
 
 //html elements
@@ -67,50 +67,50 @@ header {
         font-family: 'Lucida sans', monospace;
         font-size: 48pt;
         font-weight:lighter;
-        padding:.5em;
+        padding:0;
         margin: 18px 4px 4px 4px;
         text-align:center;
         line-height:1.3em;
         letter-spacing: .2em;
         text-transform: uppercase;
 }}
-h2{
-    font-size:24pt;
-    font-family: 'Lucida sans', monospace;
-    font-weight:lighter;
-	margin:0;
-    padding: .5em;
-    line-height: 1.2em;
-    text-align:center;
-}
-h3 {
-    font-size:22px;
-    font-family: 'Lucida sans', monospace;
-    font-weight:lighter;
-    margin:0 auto;
-    //padding-top:2px;
-    color:maroon;
-}
-h3#glowText{
-    text-shadow: 1px 1px 0 cyan;
-}
 img{
     border:none;
-    @include rounded-shaded-box(5px, 5px, 20px, $container);
     height:100%;
     width:100px;
 }
 main {
     flex-direction:column;
     flex-wrap:wrap;
-    h3:first-child{
-        padding-top:1.5em;
+    h2:first-child{
+        padding-top:.7em;
+    }
+    h2 {
+        font-size:22pt;
+        font-family: 'Lucida sans', monospace;
+        font-weight:lighter;
+        margin:0 auto;
+        margin:0;
+        padding: .5em;
+        line-height: 1.2em;
+        //padding-top:2px;
+        color:maroon;
+    }
+    h2#glowText{
+        text-shadow: 1px 1px 0 te;
+    }
+    h3{
+        font-size:24pt;
+        font-family: 'Lucida sans', monospace;
+        font-weight:lighter;
+        margin:0 auto;
+        text-align:center;
     }
     p {
-        padding:.5em 2em;
+        color:$main;
+        padding:1em 2em;
         margin:0;
         line-height:1.2em;
-        color:rgb(22, 22, 119);
         font-size:18px;
         text-align:center;
     }
@@ -142,15 +142,21 @@ main {
     margin:1em auto;
 }
 .butn { //dice roll buttons
-    background: #4ecca3; 
+    //background: #4ecca3; 
+    @include rounded-shaded-box(0, 0, 20px, $main);
+    
     font-family: "Indie Flower", cursive; 
     border-radius: 50%; 
+    border: 1px solid  #4ecca3;
     color: $bright; 
     font-size: 30px; 
     padding: 16px 25px 16px 25px; 
     text-decoration: none;
     position:relative;
 } 
+.butn:focus {
+    outline: none;
+}
 .butn:hover { 
     background: #232931; 
     text-decoration: none; 
@@ -336,4 +342,3 @@ main {
     height: 50px;
     border: 1px solid $main;
 }
-

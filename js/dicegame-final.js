@@ -201,27 +201,27 @@ function rollTheDice() {
         $('#div2Display').text(z);
         player1dice1score = parseInt(z);
         updateDiceImagesPD1(player1dice1score);//call updateDiceImages Function
-        player1.innerHTML += `<span style="color:blue;font-size:24px;">Player rolled a ${player1dice1score}</style>`;
+        player1.innerHTML += `<span style="font-size:24px;">Player rolled a <span style="color:blue">${player1dice1score}</span></span>`;
     };
     myDiceRollDice2.roll();{
         $('#div3Display').text(z);
         player1dice2score = parseInt(z);
         updateDiceImagesPD2(player1dice2score);//call updateDiceImages Function
-        player1.innerHTML += `<span style="color:blue;font-size:24px;"> and a ${player1dice2score}.</style><br />`;
+        player1.innerHTML += `<span style="font-size:24px;"> and a <span style="color:blue">${player1dice2score}</span></span><br />`;
     };
     //Computer
     compDiceRoll.roll();{
         $('#div22Display').text(z);
         comp1dice1score = z;
         updateDiceImagesCD1(comp1dice1score);//call updateDiceImages Function
-        computer.innerHTML += `<span style="color:chartreuse;font-size:24px;">Computer rolled a ${comp1dice1score}</style>`;
+        computer.innerHTML += `<span style="color:darkgreen;font-size:24px;">Computer rolled a <span style="color:chartreuse">${comp1dice1score}</span></span>`;
 
     };
     compDiceRoll2.roll();{
         $('#div23Display').text(z);
         comp1dice2score = z;
         updateDiceImagesCD2(comp1dice2score);//call updateDiceImages Function
-        computer.innerHTML += `<span style="color:chartreuse;font-size:24px;"> and a ${comp1dice2score}.</style><br />`;
+        computer.innerHTML += `<span style="color:darkgreen;font-size:24px;"> and a <span style="color:chartreuse">${comp1dice2score}</span></span><br />`;
     };
 
     // calculate Player score output
@@ -281,7 +281,7 @@ function rollTheDice() {
     else { 
         document.querySelector("h1").innerHTML = ( play1 + " WINS!" ); 
     } 
-    
+
     //roll counter
     counter = counter + 1;
 
@@ -315,6 +315,8 @@ function rollTheDice() {
         player1.innerHTML  ='';
         computer.innerHTML ='';
 
+        document.querySelector("h1").innerHTML = ( 'DICE GAME' ); 
+
     }
 }
 
@@ -325,27 +327,27 @@ rollDicebtn.addEventListener('click', function(event){
         $('#div2Display').text(z);
         player1dice1score = parseInt(z);
         updateDiceImagesPD1(player1dice1score);//call updateDiceImages Function
-        player1.innerHTML += `<span style="color:blue;font-size:24px;">Player rolled a ${player1dice1score}</style>`;
+        player1.innerHTML += `<span style="font-size:24px;">Player rolled a <span style="color:blue">${player1dice1score}</span></span>`;
     };
     myDiceRollDice2.roll();{
         $('#div3Display').text(z);
         player1dice2score = parseInt(z);
         updateDiceImagesPD2(player1dice2score);//call updateDiceImages Function
-        player1.innerHTML += `<span style="color:blue;font-size:24px;"> and a ${player1dice2score}.</style><br />`;
+        player1.innerHTML += `<span style="font-size:24px;"> and a <span style="color:blue">${player1dice2score}</span></span><br />`;
     };
     //Computer
     compDiceRoll.roll();{
         $('#div22Display').text(z);
         comp1dice1score = z;
         updateDiceImagesCD1(comp1dice1score);//call updateDiceImages Function
-        computer.innerHTML += `<span style="color:chartreuse;font-size:24px;">Computer rolled a ${comp1dice1score}</style>`;
+        computer.innerHTML += `<span style="color:darkgreen;font-size:24px;">Computer rolled a <span style="color:chartreuse">${comp1dice1score}</span></span>`;
 
     };
     compDiceRoll2.roll();{
         $('#div23Display').text(z);
         comp1dice2score = z;
         updateDiceImagesCD2(comp1dice2score);//call updateDiceImages Function
-        computer.innerHTML += `<span style="color:chartreuse;font-size:24px;"> and a ${comp1dice2score}.</style><br />`;
+        computer.innerHTML += `<span style="color:darkgreen;font-size:24px;"> and a <span style="color:chartreuse">${comp1dice2score}</span></span><br />`;
     };
 
     // calculate Player score output
@@ -425,6 +427,8 @@ rollDicebtn.addEventListener('click', function(event){
         counter            = 0;
         player1.innerHTML  ='';
         computer.innerHTML ='';
+
+        document.querySelector("h1").innerHTML = ( 'DICE GAME' ); 
 
     }
 });

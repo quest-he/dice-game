@@ -54,7 +54,7 @@ header h1 {
   font-family: 'Lucida sans', monospace;
   font-size: 48pt;
   font-weight: lighter;
-  padding: .5em;
+  padding: 0;
   margin: 18px 4px 4px 4px;
   text-align: center;
   line-height: 1.3em;
@@ -62,31 +62,8 @@ header h1 {
   text-transform: uppercase;
 }
 
-h2 {
-  font-size: 24pt;
-  font-family: 'Lucida sans', monospace;
-  font-weight: lighter;
-  margin: 0;
-  padding: .5em;
-  line-height: 1.2em;
-  text-align: center;
-}
-
-h3 {
-  font-size: 22px;
-  font-family: 'Lucida sans', monospace;
-  font-weight: lighter;
-  margin: 0 auto;
-  color: maroon;
-}
-
-h3#glowText {
-  text-shadow: 1px 1px 0 cyan;
-}
-
 img {
   border: none;
-  box-shadow: 5px 5px 30px lightgreen;
   height: 100%;
   width: 100px;
 }
@@ -96,15 +73,38 @@ main {
   flex-wrap: wrap;
 }
 
-main h3:first-child {
-  padding-top: 1.5em;
+main h2:first-child {
+  padding-top: .7em;
+}
+
+main h2 {
+  font-size: 22pt;
+  font-family: 'Lucida sans', monospace;
+  font-weight: lighter;
+  margin: 0 auto;
+  margin: 0;
+  padding: .5em;
+  line-height: 1.2em;
+  color: maroon;
+}
+
+main h2#glowText {
+  text-shadow: 1px 1px 0 te;
+}
+
+main h3 {
+  font-size: 24pt;
+  font-family: 'Lucida sans', monospace;
+  font-weight: lighter;
+  margin: 0 auto;
+  text-align: center;
 }
 
 main p {
-  padding: .5em 2em;
+  color: black;
+  padding: 1em 2em;
   margin: 0;
   line-height: 1.2em;
-  color: #161677;
   font-size: 18px;
   text-align: center;
 }
@@ -139,14 +139,19 @@ ol {
 }
 
 .butn {
-  background: #4ecca3;
+  box-shadow: 0 0 20px lightgreen;
   font-family: "Indie Flower", cursive;
   border-radius: 50%;
+  border: 1px solid  #4ecca3;
   color: ivory;
   font-size: 30px;
   padding: 16px 25px 16px 25px;
   text-decoration: none;
   position: relative;
+}
+
+.butn:focus {
+  outline: none;
 }
 
 .butn:hover {
