@@ -9,13 +9,11 @@
     Bruce Wong
 */
 
+//site colours
 $bg: midnightblue;
 $main: black;
 $container: lightgreen;
-
-//$link: #aaf0f0;
-//$hover: violet;
-//$visited:darkturquoise;
+$bright:ivory;
 
 html {
     box-sizing:border-box;
@@ -43,7 +41,7 @@ body {
 }}
 footer {
     padding: 20px;
-    color:white;
+    color:$bright;
     p {
     line-height: 1;
     margin: 0;
@@ -59,12 +57,12 @@ footer {
 header {
     width:99.7%;
     h1 {
-        color:ivory;
+        color:$bright;
         font-family: 'Lucida sans', monospace;
-        font-size: 32pt;
+        font-size: 48pt;
         font-weight:lighter;
         padding:.5em;
-        margin:4px 4px 24px 4px;
+        margin: 18px 4px 4px 4px;
         text-align:center;
         line-height:1.3em;
         letter-spacing: .2em;
@@ -109,16 +107,16 @@ main {
     #rules{
         padding-bottom:1.5em;
     }
-    section.hideshow p{
+    section.hideshow li{
         color: rgb(61, 0, 110);
         font-size:16px;
     }
-    section.hideshow p:first-child{
-            padding-top:1.5em;
+    section.hideshow li:first-child{
+        padding-top:1.5em;
     }
     #btn_show{
         background: $bg;
-        color:ivory;
+        color:$bright;
         border:none;
         padding:4px 100px;
 }
@@ -130,7 +128,7 @@ main {
     background: #4ecca3; 
     font-family: "Indie Flower", cursive; 
     border-radius: 50%; 
-    color: #ffff; 
+    color: $bright; 
     font-size: 30px; 
     padding: 16px 25px 16px 25px; 
     text-decoration: none;
@@ -224,11 +222,11 @@ main {
 .imge1{
     height:100%;
     width:100px;
-    box-shadow:	2px	2px	10px black;
+    box-shadow:	2px	2px	10px $main;
 }
 .imge2{
     width:100px;
-    box-shadow:	2px	2px	10px black;
+    box-shadow:	2px	2px	10px $main;
 }
 ///////////////////////
 
@@ -245,7 +243,7 @@ main {
     
     margin: 5px;
     //margin-left: 50px;
-    border: 1px dashed black;
+    border: 1px dashed $main;
     border-collapse: collapse;
 }
 .div2{  //Player1 Dice#1 title
@@ -253,13 +251,13 @@ main {
     //width: 50px;
     height:100px;
     //font-size: 30px;
-    border: 1px solid black;
+    border: 1px solid $main;
     border-collapse: collapse;
 }
 .div3{ //Player1 Dice#2 title
     margin: 5px;
     height:100px;
-    border: 1px solid black;
+    border: 1px solid $main;
 }
 .div4{ //Player1 Score this round title
     margin: 5px;
@@ -267,7 +265,7 @@ main {
     height: 25px;
 }
 #div4Display{
-    border: 1px solid black;
+    border: 1px solid $main;
     padding:4px;
     background:lightgoldenrodyellow;
 }
@@ -277,14 +275,14 @@ main {
     height: 25px;
 }
 #div5Display{
-    border: 1px solid black;
+    border: 1px solid $main;
     padding:4px;
     background:lightcyan;
 }
 .div6{
     margin: 5px;
     //width: 100px;
-    border: 1px solid black;
+    border: 1px solid $main;
 }
 .parent2 {
     //margin: 10px;
@@ -296,7 +294,7 @@ main {
 }
 .div21{ // COMPUTER heading
     margin: 5px;
-    border: 1px dashed black;
+    border: 1px dashed $main;
     border-collapse: collapse;
 }
 .div22{ //computer Dice#1
@@ -304,7 +302,7 @@ main {
     //width: 50px;
     height:100px;
     //font-size: 30px;
-    border: 1px solid black;
+    border: 1px solid $main;
     border-collapse: collapse;
 }
 .div23{ //computer Dice#2
@@ -328,7 +326,7 @@ main {
     height: 25px;
 }
 #div25Display{
-    border: 1px solid black;
+    border: 1px solid $main;
     padding:4px;
     background:lightcyan;
 }
@@ -336,23 +334,5 @@ main {
     margin: 5px;
     //width: 100px;
     height: 50px;
-    border: 1px solid black;
+    border: 1px solid $main;
 }
-
-//////////////////// links
-/*.external-links {
-    color: $link;
-}
-.external-links:hover {
-    color: $hover;
-}
-.internal-links {
-    color: $link;
-}
-.internal-links:hover {
-    color: #b49cf7;
-}*/
-///////////////////
-
-
-
