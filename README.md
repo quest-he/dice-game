@@ -94,6 +94,21 @@ else if ( (compTotal >= playerTotal ) && (counter === 4) ){
     alert(`GAME OVER. Computer wins! The game will now reset.`);
 }  
 ```
+* Upon validation, the following SCSS had a couple errors in it. As such, we updated to the contemporary method of using the css 'linear-gradient()' function.
+```
+@mixin gradient( $from, $to ) {
+    background-color: $from;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,     $from 0%, $to 100%); /* Chrome10+,Safari5.1+ */
+    background:    -moz-linear-gradient(top,     $from 0%, $to 100%); /* FF3.6+ */
+    background:     -ms-linear-gradient(top,     $from 0%, $to 100%); /* IE10+ */
+    background:      -o-linear-gradient(top,     $from 0%, $to 100%); /* Opera 11.10+ */
+    background:       linear-gradient(to bottom, $from 0%, $to 100%); /* W3C */
+}
+.d11{
+    @include gradient ( $blue 0%, $green 100%);
+}
+```
 
 ## Closing Notes
-Due to the structure of this project, our team felt it unnecessary to include @media and @print screens in the SCSS. A second @mixin (gradient) was added for effect and looks as desired but was pulled from year old code. A more contemporary way to create gradients is to use 'linear-gradient' or 'radial-gradient' on a property such as 'background' in SCSS.
+Due to the structure of this project, our team felt it unnecessary to include @media and @print screens in the SCSS. 
