@@ -129,8 +129,13 @@ ol {
   padding: 4px 100px;
 }
 
+#btn_show:focus {
+  outline: none;
+}
+
 #rules {
   padding-bottom: 1.5em;
+  color: palegoldenrod;
 }
 
 #btnNewGame {
@@ -199,27 +204,41 @@ ol {
   padding-bottom: 1em;
   max-height: 403px;
   height: 100%;
+  width: 333px;
 }
 
 .d11 {
   grid-area: info2;
   background: lightgreen;
+  background-color: midnightblue 0%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, midnightblue 0%), color-stop(100%, chartreuse 100%));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, midnightblue 0% 0%, chartreuse 100% 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(top, midnightblue 0% 0%, chartreuse 100% 100%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(top, midnightblue 0% 0%, chartreuse 100% 100%);
+  /* IE10+ */
+  background: -o-linear-gradient(top, midnightblue 0% 0%, chartreuse 100% 100%);
+  /* Opera 11.10+ */
+  background: linear-gradient(to bottom, midnightblue 0% 0%, chartreuse 100% 100%);
+  /* W3C */
   padding-bottom: 1em;
-  max-width: 372.53px;
+  width: 333px;
 }
 
 .d2 {
   grid-area: dice;
   background: lightskyblue;
   align-items: center;
-  padding: 1em;
+  padding: .5em;
 }
 
 .d3 {
   grid-area: dice2;
   background: lightseagreen;
   align-items: center;
-  padding: 1em;
+  padding: .5em;
 }
 
 .d4 {
@@ -257,13 +276,16 @@ ol {
 
 .div2 {
   margin: 5px;
-  height: 100px;
+  height: 100%;
+  width: 60px;
   border-collapse: collapse;
 }
 
 .div3 {
   margin: 5px;
-  height: 100px;
+  height: 100%;
+  width: 60px;
+  border-collapse: collapse;
 }
 
 .div4 {
@@ -298,13 +320,16 @@ ol {
 
 .div22 {
   margin: 5px;
-  height: 100px;
+  height: 100%;
+  width: 60px;
   border-collapse: collapse;
 }
 
 .div23 {
   margin: 5px;
-  height: 100px;
+  height: 100%;
+  width: 60px;
+  border-collapse: collapse;
 }
 
 .div24 {

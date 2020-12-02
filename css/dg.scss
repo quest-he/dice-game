@@ -14,13 +14,22 @@ $bg: midnightblue;
 $main: black;
 $container: lightgreen;
 $bright:ivory;
+$blue:cadetblue;
+$green:chartreuse;
+$gold:palegoldenrod;
 
 //mixins
 @mixin rounded-shaded-box($xoffset, $yoffset, $rounded-corners, $border-color){
     box-shadow:$xoffset $yoffset 20px $container;	  
 }
-@mixin rounded-shaded-box2($xoffset, $yoffset, $rounded-corners, $border-color){
-    box-shadow:$xoffset $yoffset 20px cyan;	  
+@mixin gradient( $from, $to ) {
+    background-color: $from;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,     $from 0%, $to 100%); /* Chrome10+,Safari5.1+ */
+    background:    -moz-linear-gradient(top,     $from 0%, $to 100%); /* FF3.6+ */
+    background:     -ms-linear-gradient(top,     $from 0%, $to 100%); /* IE10+ */
+    background:      -o-linear-gradient(top,     $from 0%, $to 100%); /* Opera 11.10+ */
+    background:       linear-gradient(to bottom, $from 0%, $to 100%); /* W3C */
 }
 
 //html elements
@@ -147,8 +156,12 @@ main {
         border:none;
         padding:4px 100px;
     }
+    #btn_show:focus{
+        outline:none;
+    }
     #rules{
         padding-bottom:1.5em;
+        color:palegoldenrod;
     }
 
 
@@ -220,13 +233,16 @@ main {
     padding-bottom:1em;
     max-height:403px;
     height:100%;
+    width:333px;
+
 }
 //rules
 .d11{
     grid-area:info2;
     background: $container;
+    @include gradient ( $bg 0%, $green 100%);
     padding-bottom:1em;
-    max-width:372.53px;
+    width:333px;
 
 }
 //player dice
@@ -234,14 +250,14 @@ main {
     grid-area:dice;
     background:lightskyblue;
     align-items:center;
-    padding:1em;
+    padding:.5em;
 }
 //comp dice
 .d3{
     grid-area:dice2;
     background:lightseagreen;
     align-items:center;
-    padding:1em;
+    padding:.5em;
 }
 //player output
 .d4{
@@ -277,14 +293,17 @@ main {
     justify-content: center;
     border-collapse: collapse;
 }
-.div2{  //Player1 Dice#1 title
+.div2{  //Player1 Dice#1 
     margin: 5px;
-    height:100px;
+    height:100%;
+    width: 60px;
     border-collapse: collapse;
 }
-.div3{ //Player1 Dice#2 title
+.div3{ //Player1 Dice#2 
     margin: 5px;
-    height:100px;
+    height:100%;
+    width: 60px;
+    border-collapse: collapse;
 }
 .div4{ //Player1 Score this round title
     margin: 5px;
@@ -315,12 +334,15 @@ main {
 }
 .div22{ //computer Dice#1
     margin: 5px;
-    height:100px;
+    height:100%;
+    width:60px;
     border-collapse: collapse;
 }
 .div23{ //computer Dice#2
     margin: 5px;
-    height:100px;
+    height:100%;
+    width:60px;
+    border-collapse: collapse;
 }
 .div24{ //computer Score this round title
     margin: 5px;
