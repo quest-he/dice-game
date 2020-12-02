@@ -167,7 +167,9 @@ ol {
   grid-template-rows: auto;
   /* arranging the grid template areas 
        is like stacking legos*/
-  grid-template-areas: "info info2" "dice dice2 " "play play2 ";
+  grid-template-areas: "info info2"
+ "dice dice2 "
+ "play play2 ";
   align-items: center;
   margin: auto 0;
 }
@@ -183,7 +185,7 @@ ol {
 .d11 {
   grid-area: info2;
   background: lightgreen;
-  background-color: lightskyblue 0%;
+  background-color: lightskyblue;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, lightskyblue 0%), color-stop(100%, lightseagreen 100%));
   /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, lightskyblue 0% 0%, lightseagreen 100% 100%);
