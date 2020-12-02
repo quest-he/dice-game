@@ -67,7 +67,7 @@ footer {
 ///////////////// page wrap div id
 #rap {
     margin:.5em;
-    width: 745px; 
+    width: 95%; 
 
 }////////////////
 
@@ -82,7 +82,6 @@ header {
         }
         padding:0;
         margin: 40px 4px;
-        
         line-height:1.3em;
         letter-spacing: .2em;
         text: {
@@ -132,7 +131,7 @@ main {
         text-align:center;
     }
 }
-//hide show animation reveal
+//hide show dropdown slide animation reveal
     section.hideshow li{
         color: rgb(61, 0, 110);
         font-size:16px;
@@ -157,26 +156,6 @@ main {
         padding-bottom:1.5em;
     }
 
-.glowText{
-    text-shadow: 1px 1px 0 cyan;
-}
-//new game button
-#btnNewGame{
-    margin:1em auto;
-    color:indigo;
-    background:$bright;
-    padding: .8em 1em;
-    border:1px dashed violet;
-}
-#rollDicebtn{
-    color:indigo;
-    background:$bright;
-    padding:.8em 1em;
-    border:1px solid chartreuse;
-}
-    #rollDicebtn:focus{
-        outline:none;
-    }
 .butn { //dice img buttons
     //background: #4ecca3; 
     @include rounded-shaded-box(0, 0, 20px, $main);
@@ -188,13 +167,13 @@ main {
     text-decoration: none;
     position:relative;
 } 
-    .butn:focus {
-        outline: none;
-    }
-    .butn:hover { 
-        background: #232931; 
-        text-decoration: none; 
-    }
+.butn:focus {
+    outline: none;
+}
+.butn:hover { 
+    background: #232931; 
+    text-decoration: none; 
+}
 //top
 .container {
     background: $container;
@@ -290,12 +269,12 @@ main {
 
 /*flexbox*/
 //part 1 -- player 1 info
-.parent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-collapse: collapse;
-}
+    .parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-collapse: collapse;
+    }
 .div2{  //Player1 Dice#1 
     margin: 5px;
     height:100%;
@@ -328,12 +307,12 @@ main {
 }
 
 //part 2 -- computer info
-.parent2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-collapse: collapse;
-}
+    .parent2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-collapse: collapse;
+    }
 .div22{ //computer Dice#1
     margin: 5px;
     height:100%;
@@ -365,4 +344,26 @@ main {
     border: 1px solid $main;
     padding:4px;
     background:lightcyan;
+}
+
+//glowing text effect
+.glowText{
+    text-shadow: 1px 1px 0 cyan;
+}
+//new game button
+#btnNewGame{
+    margin:1em auto;
+    color:indigo;
+    background:$bright;
+    padding: .8em 1em;
+    border:1px dashed violet;
+}
+#rollDicebtn{
+    color:indigo;
+    background:$bright;
+    padding:.8em 1em;
+    border:1px solid chartreuse;
+}
+#rollDicebtn:focus{
+    outline:none;
 }

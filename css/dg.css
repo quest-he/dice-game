@@ -42,7 +42,7 @@ footer p {
 
 #rap {
   margin: .5em;
-  width: 745px;
+  width: 95%;
 }
 
 header {
@@ -129,29 +129,6 @@ ol {
 
 #rules {
   padding-bottom: 1.5em;
-}
-
-.glowText {
-  text-shadow: 1px 1px 0 cyan;
-}
-
-#btnNewGame {
-  margin: 1em auto;
-  color: indigo;
-  background: ivory;
-  padding: .8em 1em;
-  border: 1px dashed violet;
-}
-
-#rollDicebtn {
-  color: indigo;
-  background: ivory;
-  padding: .8em 1em;
-  border: 1px solid chartreuse;
-}
-
-#rollDicebtn:focus {
-  outline: none;
 }
 
 .butn {
@@ -351,4 +328,27 @@ ol {
   border: 1px solid black;
   padding: 4px;
   background: lightcyan;
+}
+
+.glowText {
+  text-shadow: 1px 1px 0 cyan;
+}
+
+#btnNewGame {
+  margin: 1em auto;
+  color: indigo;
+  background: ivory;
+  padding: .8em 1em;
+  border: 1px dashed violet;
+}
+
+#rollDicebtn {
+  color: indigo;
+  background: ivory;
+  padding: .8em 1em;
+  border: 1px solid chartreuse;
+}
+
+#rollDicebtn:focus {
+  outline: none;
 }

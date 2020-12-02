@@ -195,6 +195,7 @@ function rollTheDice() {
 
     //add .glowText css to the score output
     playScore.classList.add('glowText');
+    compScore.classList.add('glowText');
 
     // calculate Computer score output
     compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score)
@@ -213,9 +214,6 @@ function rollTheDice() {
         (compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score));
         $('#div24Display').text(compScoreOutput);
     }
-
-    //add .glowText css to the score output
-    compScore.classList.add('glowText');
     
     //count values for total score
     //
@@ -317,6 +315,7 @@ rollDicebtn.addEventListener('click', function(event){
 
     //add .glowText css to the score output
     playScore.classList.add('glowText');
+    compScore.classList.add('glowText');
 
     // calculate Computer score output
     compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score)
@@ -336,8 +335,6 @@ rollDicebtn.addEventListener('click', function(event){
         $('#div24Display').text(compScoreOutput);
     }
 
-    //add .glowText css to the score output
-    compScore.classList.add('glowText');
     
     //count values for total score
     //player 1 score
@@ -417,12 +414,14 @@ function  updateDiceImagesCD2(comp1dice2score){
 }
 //////////////////////////////////////////
 
+
 //remove .glowText css from the new game button
 newGamebtn.classList.remove('glowText');
 
+
 // call the footer
 const footNote = document.getElementById('footNote');
-//change its colour and formatting
+//change footNote colour and formatting
 footNote.style.color = 'magenta';
 footNote.style.letterSpacing = '.6em';
 // footer output
