@@ -44,6 +44,7 @@ Merge + Operation Updates: Heather
 * rollDicebtn: Bruce
 * rollTheDice: David
 * score outputs: Heather + Bruce
+* classList +/-: Heather
 * footer: Heather
 ```
 * SCSS

@@ -11,12 +11,18 @@
 
 // HTML ELEMENTS
 //
-const howToPlay = document.getElementById('howtoplay');
-//dice roll phrase output for each player
-const player1   = document.getElementById('player1-roll');
-const computer  = document.getElementById('computer-roll');
+//instructions output
+const howToPlay  = document.getElementById('howtoplay');
 //section id for hideshow
-const hideshow  = document.getElementById("hideshow");
+const hideshow   = document.getElementById("hideshow");
+//dice roll phrase output for each player
+const player1    = document.getElementById('player1-roll');
+const computer   = document.getElementById('computer-roll');
+//score outputs
+const playScore  = document.getElementById('div4Display');
+const compScore  = document.getElementById('div24Display');
+//new game button
+const newGamebtn = document.getElementById('btnNewGame');
 
 //How to Play Dice Game instructions
 const instructions = [`Click on any dice to stop its roll, or`,
@@ -187,6 +193,9 @@ function rollTheDice() {
         $('#div4Display').text(player1scoreOutput);
     }
 
+    //add .glowText css to the score output
+    playScore.classList.add('glowText');
+
     // calculate Computer score output
     compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score)
     //rule set round score to 0 if encounter 1
@@ -204,6 +213,9 @@ function rollTheDice() {
         (compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score));
         $('#div24Display').text(compScoreOutput);
     }
+
+    //add .glowText css to the score output
+    compScore.classList.add('glowText');
     
     //count values for total score
     //
@@ -303,6 +315,9 @@ rollDicebtn.addEventListener('click', function(event){
         $('#div4Display').html(`<span style="color:darkred">${player1scoreOutput}</style>`);
     }
 
+    //add .glowText css to the score output
+    playScore.classList.add('glowText');
+
     // calculate Computer score output
     compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score)
     //rule set round score to 0 if encounter 1
@@ -320,6 +335,9 @@ rollDicebtn.addEventListener('click', function(event){
         (compScoreOutput = parseInt(comp1dice1score) + parseInt(comp1dice2score));
         $('#div24Display').text(compScoreOutput);
     }
+
+    //add .glowText css to the score output
+    compScore.classList.add('glowText');
     
     //count values for total score
     //player 1 score
@@ -399,7 +417,13 @@ function  updateDiceImagesCD2(comp1dice2score){
 }
 //////////////////////////////////////////
 
+//remove .glowText css from the new game button
+newGamebtn.classList.remove('glowText');
+
 // call the footer
 const footNote = document.getElementById('footNote');
+//change its colour and formatting
+footNote.style.color = 'magenta';
+footNote.style.letterSpacing = '.6em';
 // footer output
 footNote.innerHTML = '\u00A9' + '2020 David Deda, Heather Tijman, Bruce Wong'; 

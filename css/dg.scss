@@ -14,9 +14,8 @@ $bg: midnightblue;
 $main: black;
 $container: lightgreen;
 $bright:ivory;
-$blue:cadetblue;
-$green:chartreuse;
-$gold:palegoldenrod;
+$blue:lightskyblue;
+$green:lightseagreen;
 
 //mixins
 @mixin rounded-shaded-box($xoffset, $yoffset, $rounded-corners, $border-color){
@@ -50,7 +49,7 @@ body {
     padding:0;
     min-width:745px;
     max-width:1024px;
-    width:95%;
+    width:97%;
     justify-content:center;
     text-align:center;
     font: {
@@ -62,12 +61,12 @@ footer {
     color:$bright;
     p {
     line-height: 1;
-    margin: 0;
+    font-size:14px;
     }
 }
 ///////////////// page wrap div id
 #rap {
-    margin:1em;
+    margin:.5em;
     width: 745px; 
 
 }////////////////
@@ -112,9 +111,6 @@ main {
         padding: .5em;
         line-height: 1.2em;
     }
-    h2#glowText{
-        text-shadow: 1px 1px 0 cyan;
-    }
     h3{
         font: {
             size:24pt;
@@ -133,8 +129,6 @@ main {
         color:$main;
         font-size:18px;
         line-height:1.2em;
-        margin:0;
-        padding:1em 2em;
         text-align:center;
     }
 }
@@ -152,7 +146,7 @@ main {
     }
     #btn_show{
         background: $bg;
-        color:$bright;
+        color:palegoldenrod;
         border:none;
         padding:4px 100px;
     }
@@ -161,10 +155,11 @@ main {
     }
     #rules{
         padding-bottom:1.5em;
-        color:palegoldenrod;
     }
 
-
+.glowText{
+    text-shadow: 1px 1px 0 cyan;
+}
 //new game button
 #btnNewGame{
     margin:1em auto;
@@ -212,7 +207,7 @@ main {
 .container2{
     display:grid;
     font-size: 20px;
-    width: 100%;
+    width: 666px;
     grid-template-columns: auto auto ;
     grid-template-rows: auto;
     /* arranging the grid template areas 
@@ -231,7 +226,6 @@ main {
     grid-area:info;
     background:$container; 
     padding-bottom:1em;
-    max-height:403px;
     height:100%;
     width:333px;
 
@@ -240,7 +234,7 @@ main {
 .d11{
     grid-area:info2;
     background: $container;
-    @include gradient ( $bg 0%, $green 100%);
+    @include gradient ( $blue 0%, $green 100%);
     padding-bottom:1em;
     width:333px;
 
@@ -248,46 +242,55 @@ main {
 //player dice
 .d2{
     grid-area:dice;
-    background:lightskyblue;
+    background:$blue;
     align-items:center;
     padding:.5em;
+    width:333px;
+
 }
 //comp dice
 .d3{
     grid-area:dice2;
-    background:lightseagreen;
+    background:$green;
     align-items:center;
     padding:.5em;
+    width:333px;
+
 }
 //player output
 .d4{
     grid-area:play;
-    background:lightskyblue;
+    background:$blue;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     padding:1em;
+    width:333px;
+
+
 }
 //computer output
 .d5{
     grid-area:play2;
-    background:lightseagreen;
+    background:$green;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     padding:1em;
+    width:333px;
+
 }
 //click buttons
 .d6{
     background:yellow;
+    width:666px;
 }
 
 /*flexbox*/
 //part 1 -- player 1 info
 .parent {
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -326,7 +329,6 @@ main {
 
 //part 2 -- computer info
 .parent2 {
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
