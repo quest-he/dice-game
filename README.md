@@ -112,3 +112,5 @@ else if ( (compTotal >= playerTotal ) && (counter === 4) ){
 
 ## Closing Notes
 Due to the structure of this project, our team felt it unnecessary to include @media and @print screens in the SCSS. 
+
+Final grade received for this project: 100%
